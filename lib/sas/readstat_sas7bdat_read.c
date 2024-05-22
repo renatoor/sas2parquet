@@ -112,8 +112,8 @@ static void sas7bdat_ctx_free(sas7bdat_ctx_t *ctx) {
     if (ctx->scratch_buffer)
         free(ctx->scratch_buffer);
 
-    if (ctx->page)
-        free(ctx->page);
+    // if (ctx->page)
+    //     free(ctx->page);
 
     if (ctx->row)
         free(ctx->row);
@@ -1009,6 +1009,9 @@ static readstat_error_t sas7bdat_parse_meta_pages_pass1(sas7bdat_ctx_t *ctx, int
     readstat_io_t *io = ctx->io;
     int64_t i;
 
+    // TODO REMOVER
+    // char *page;
+
     /* look for META and MIX pages at beginning... */
     for (i=0; i<ctx->page_count; i++) {
         if (io->seek(ctx->header_size + i*ctx->page_size, READSTAT_SEEK_SET, io->io_ctx) == -1) {
@@ -1029,7 +1032,7 @@ static readstat_error_t sas7bdat_parse_meta_pages_pass1(sas7bdat_ctx_t *ctx, int
         size_t head_len = off + 16 + 2;
         size_t tail_len = ctx->page_size - head_len;
 
-        if (io->read(ctx->page, head_len, io->io_ctx) < head_len) {
+        if (io->read_nocopy((void **) &ctx->page, head_len, io->io_ctx) < head_len) {
             retval = READSTAT_ERROR_READ;
             goto cleanup;
         }
@@ -1041,10 +1044,17 @@ static readstat_error_t sas7bdat_parse_meta_pages_pass1(sas7bdat_ctx_t *ctx, int
         if ((page_type & SAS_PAGE_TYPE_COMP))
             continue;
 
-        if (io->read(ctx->page + head_len, tail_len, io->io_ctx) < tail_len) {
+        io->seek(-head_len, READSTAT_SEEK_CUR, io->io_ctx);
+
+        if (io->read_nocopy((void **) &ctx->page, ctx->page_size, io->io_ctx) < ctx->page_size) {
             retval = READSTAT_ERROR_READ;
             goto cleanup;
         }
+
+        // if (io->read(ctx->page + head_len, tail_len, io->io_ctx) < tail_len) {
+        //     retval = READSTAT_ERROR_READ;
+        //     goto cleanup;
+        // }
 
         if ((retval = sas7bdat_parse_page_pass1(ctx->page, ctx->page_size, ctx)) != READSTAT_OK) {
             if (ctx->handle.error && retval != READSTAT_ERROR_USER_ABORT) {
@@ -1071,6 +1081,9 @@ static readstat_error_t sas7bdat_parse_amd_pages_pass1(int64_t last_examined_pag
     uint64_t i;
     uint64_t amd_page_count = 0;
 
+    //TODO REMOVER
+    // char *page;
+
     /* ...then AMD pages at the end */
     for (i=ctx->page_count-1; i>last_examined_page_pass1; i--) {
         if (io->seek(ctx->header_size + i*ctx->page_size, READSTAT_SEEK_SET, io->io_ctx) == -1) {
@@ -1091,7 +1104,7 @@ static readstat_error_t sas7bdat_parse_amd_pages_pass1(int64_t last_examined_pag
         size_t head_len = off + 16 + 2;
         size_t tail_len = ctx->page_size - head_len;
 
-        if (io->read(ctx->page, head_len, io->io_ctx) < head_len) {
+        if (io->read_nocopy((void **) &ctx->page, head_len, io->io_ctx) < head_len) {
             retval = READSTAT_ERROR_READ;
             goto cleanup;
         }
@@ -1107,7 +1120,9 @@ static readstat_error_t sas7bdat_parse_amd_pages_pass1(int64_t last_examined_pag
         if ((page_type & SAS_PAGE_TYPE_COMP))
             continue;
 
-        if (io->read(ctx->page + head_len, tail_len, io->io_ctx) < tail_len) {
+        io->seek(-head_len, READSTAT_SEEK_CUR, io->io_ctx);
+
+        if (io->read_nocopy((void **) &ctx->page, ctx->page_size, io->io_ctx) < ctx->page_size) {
             retval = READSTAT_ERROR_READ;
             goto cleanup;
         }
@@ -1136,11 +1151,14 @@ static readstat_error_t sas7bdat_parse_all_pages_pass2(sas7bdat_ctx_t *ctx) {
     readstat_io_t *io = ctx->io;
     int64_t i;
 
+    // TODO REMOVER
+    // char *page;
+
     for (i=0; i<ctx->page_count; i++) {
         if ((retval = sas7bdat_update_progress(ctx)) != READSTAT_OK) {
             goto cleanup;
         }
-        if (io->read(ctx->page, ctx->page_size, io->io_ctx) < ctx->page_size) {
+        if (io->read_nocopy((void **) &ctx->page, ctx->page_size, io->io_ctx) < ctx->page_size) {
             retval = READSTAT_ERROR_READ;
             goto cleanup;
         }
@@ -1223,10 +1241,10 @@ readstat_error_t readstat_parse_sas7bdat(readstat_parser_t *parser, const char *
     if (ctx->input_encoding == NULL) {
         ctx->input_encoding = hinfo->encoding;
     }
-    if ((ctx->page = readstat_malloc(ctx->page_size)) == NULL) {
-        retval = READSTAT_ERROR_MALLOC;
-        goto cleanup;
-    }
+    // if ((ctx->page = readstat_malloc(ctx->page_size)) == NULL) {
+    //     retval = READSTAT_ERROR_MALLOC;
+    //     goto cleanup;
+    // }
 
     if (ctx->input_encoding && ctx->output_encoding && strcmp(ctx->input_encoding, ctx->output_encoding) != 0) {
         iconv_t converter = iconv_open(ctx->output_encoding, ctx->input_encoding);

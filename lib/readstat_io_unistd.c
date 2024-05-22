@@ -134,9 +134,6 @@ readstat_error_t unistd_io_init(readstat_parser_t *parser) {
     if ((retval = readstat_set_read_handler(parser, unistd_read_handler)) != READSTAT_OK)
         return retval;
 
-    if ((retval = readstat_set_read_nocopy_handler(parser, unistd_read_handler)) != READSTAT_OK)
-        return retval;
-
     if ((readstat_set_update_handler(parser, unistd_update_handler)) != READSTAT_OK)
         return retval;
 

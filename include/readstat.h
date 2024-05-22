@@ -321,6 +321,7 @@ typedef int (*readstat_open_handler)(const char *path, void *io_ctx);
 typedef int (*readstat_close_handler)(void *io_ctx);
 typedef readstat_off_t (*readstat_seek_handler)(readstat_off_t offset, readstat_io_flags_t whence, void *io_ctx);
 typedef ssize_t (*readstat_read_handler)(void *buf, size_t nbyte, void *io_ctx);
+typedef ssize_t (*readstat_read_nocopy_handler)(void **buf, size_t nbyte, void *io_ctx);
 typedef readstat_error_t (*readstat_update_handler)(long file_size, readstat_progress_handler progress_handler, void *user_ctx, void *io_ctx);
 
 typedef struct readstat_io_s {
@@ -328,7 +329,7 @@ typedef struct readstat_io_s {
     readstat_close_handler         close;
     readstat_seek_handler          seek;
     readstat_read_handler          read;
-    readstat_read_handler          read_nocopy;
+    readstat_read_nocopy_handler   read_nocopy;
     readstat_update_handler        update;
     void                          *io_ctx;
     int                            io_ctx_needs_free;
@@ -371,7 +372,7 @@ readstat_error_t readstat_set_open_handler(readstat_parser_t *parser, readstat_o
 readstat_error_t readstat_set_close_handler(readstat_parser_t *parser, readstat_close_handler close_handler);
 readstat_error_t readstat_set_seek_handler(readstat_parser_t *parser, readstat_seek_handler seek_handler);
 readstat_error_t readstat_set_read_handler(readstat_parser_t *parser, readstat_read_handler read_handler);
-readstat_error_t readstat_set_read_nocopy_handler(readstat_parser_t *parser, readstat_read_handler read_handler);
+readstat_error_t readstat_set_read_nocopy_handler(readstat_parser_t *parser, readstat_read_nocopy_handler read_handler);
 readstat_error_t readstat_set_update_handler(readstat_parser_t *parser, readstat_update_handler update_handler);
 readstat_error_t readstat_set_io_ctx(readstat_parser_t *parser, void *io_ctx);
 

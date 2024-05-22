@@ -158,34 +158,36 @@ size_t sas_subheader_remainder(size_t len, size_t signature_len) {
     return len - (4+2*signature_len);
 }
 
+
 readstat_error_t sas_read_header(readstat_io_t *io, sas_header_info_t *hinfo, 
         readstat_error_handler error_handler, void *user_ctx) {
-    sas_header_start_t  header_start;
-    sas_header_end_t    header_end;
+    sas_header_start_t  *header_start;
+    sas_header_end_t    *header_end;
     int retval = READSTAT_OK;
     char error_buf[1024];
     time_t epoch = sas_epoch();
 
-    if (io->read(&header_start, sizeof(sas_header_start_t), io->io_ctx) < sizeof(sas_header_start_t)) {
+    if (io->read_nocopy((void **) &header_start, sizeof(sas_header_start_t), io->io_ctx) < sizeof(sas_header_start_t)) {
         retval = READSTAT_ERROR_READ;
         goto cleanup;
     }
-    if (memcmp(header_start.magic, sas7bdat_magic_number, sizeof(sas7bdat_magic_number)) != 0 &&
-            memcmp(header_start.magic, sas7bcat_magic_number, sizeof(sas7bcat_magic_number)) != 0) {
+
+    if (memcmp(header_start->magic, sas7bdat_magic_number, sizeof(sas7bdat_magic_number)) != 0 &&
+            memcmp(header_start->magic, sas7bcat_magic_number, sizeof(sas7bcat_magic_number)) != 0) {
         retval = READSTAT_ERROR_PARSE;
         goto cleanup;
     }
-    if (header_start.a1 == SAS_ALIGNMENT_OFFSET_4) {
+    if (header_start->a1 == SAS_ALIGNMENT_OFFSET_4) {
         hinfo->pad1 = 4;
     }
-    if (header_start.a2 == SAS_ALIGNMENT_OFFSET_4) {
+    if (header_start->a2 == SAS_ALIGNMENT_OFFSET_4) {
         hinfo->u64 = 1;
     }
     int bswap = 0;
-    if (header_start.endian == SAS_ENDIAN_BIG) {
+    if (header_start->endian == SAS_ENDIAN_BIG) {
         bswap = machine_is_little_endian();
         hinfo->little_endian = 0;
-    } else if (header_start.endian == SAS_ENDIAN_LITTLE) {
+    } else if (header_start->endian == SAS_ENDIAN_LITTLE) {
         bswap = !machine_is_little_endian();
         hinfo->little_endian = 1;
     } else {
@@ -194,71 +196,96 @@ readstat_error_t sas_read_header(readstat_io_t *io, sas_header_info_t *hinfo,
     }
     int i;
     for (i=0; i<sizeof(_charset_table)/sizeof(_charset_table[0]); i++) {
-        if (header_start.encoding == _charset_table[i].code) {
+        if (header_start->encoding == _charset_table[i].code) {
             hinfo->encoding = _charset_table[i].name;
             break;
         }
     }
     if (hinfo->encoding == NULL) {
         if (error_handler) {
-            snprintf(error_buf, sizeof(error_buf), "Unsupported character set code: %d", header_start.encoding);
+            snprintf(error_buf, sizeof(error_buf), "Unsupported character set code: %d", header_start->encoding);
             error_handler(error_buf, user_ctx);
         }
         retval = READSTAT_ERROR_UNSUPPORTED_CHARSET;
         goto cleanup;
     }
-    memcpy(hinfo->table_name, header_start.table_name, sizeof(header_start.table_name));
+    memcpy(hinfo->table_name, header_start->table_name, sizeof(header_start->table_name));
     if (io->seek(hinfo->pad1, READSTAT_SEEK_CUR, io->io_ctx) == -1) {
         retval = READSTAT_ERROR_SEEK;
         goto cleanup;
     }
 
     double creation_time, modification_time, creation_time_diff, modification_time_diff;
+    typedef struct file_time_s {
+      double creation_time;
+      double modification_time;
+      double creation_time_diff;
+      double modification_time_diff;
+    } file_time_t;
 
-    if (io->read(&creation_time, sizeof(double), io->io_ctx) < sizeof(double)) {
+    file_time_t *file_time;
+
+    if (io->read_nocopy((void **) &file_time, sizeof(file_time_t), io->io_ctx) < sizeof(file_time_t)) {
         retval = READSTAT_ERROR_READ;
         goto cleanup;
     }
-    if (bswap)
-        creation_time = byteswap_double(creation_time);
 
-    if (io->read(&modification_time, sizeof(double), io->io_ctx) < sizeof(double)) {
-        retval = READSTAT_ERROR_READ;
-        goto cleanup;
-    }
+    // if (io->read(&creation_time, sizeof(double), io->io_ctx) < sizeof(double)) {
+    //     retval = READSTAT_ERROR_READ;
+    //     goto cleanup;
+    // }
     if (bswap)
-        modification_time = byteswap_double(modification_time);
+        creation_time = byteswap_double(file_time->creation_time);
 
-    if (io->read(&creation_time_diff, sizeof(double), io->io_ctx) < sizeof(double)) {
-        retval = READSTAT_ERROR_READ;
-        goto cleanup;
-    }
+     //if (io->read(&modification_time, sizeof(double), io->io_ctx) < sizeof(double)) {
+     //    retval = READSTAT_ERROR_READ;
+     //    goto cleanup;
+     //}
     if (bswap)
-        creation_time_diff = byteswap_double(creation_time_diff);
+        modification_time = byteswap_double(file_time->modification_time);
+
+    // if (io->read(&creation_time_diff, sizeof(double), io->io_ctx) < sizeof(double)) {
+    //     retval = READSTAT_ERROR_READ;
+    //     goto cleanup;
+    // }
+    if (bswap)
+        creation_time_diff = byteswap_double(file_time->creation_time_diff);
     
-    if (io->read(&modification_time_diff, sizeof(double), io->io_ctx) < sizeof(double)) {
-        retval = READSTAT_ERROR_READ;
-        goto cleanup;
-    }
+    // if (io->read(&modification_time_diff, sizeof(double), io->io_ctx) < sizeof(double)) {
+    //     retval = READSTAT_ERROR_READ;
+    //     goto cleanup;
+    // }
     if (bswap)
-        modification_time_diff = byteswap_double(modification_time_diff);
+        modification_time_diff = byteswap_double(file_time->modification_time_diff);
     
     hinfo->creation_time = sas_convert_time(creation_time, creation_time_diff, epoch);
     hinfo->modification_time = sas_convert_time(modification_time, modification_time_diff, epoch);
 
-    uint32_t header_size, page_size;
+    // uint32_t header_size, page_size;
 
-    if (io->read(&header_size, sizeof(uint32_t), io->io_ctx) < sizeof(uint32_t)) {
+    typedef struct file_size_s {
+        uint32_t header_size;
+        uint32_t page_size;
+    } file_size_t;
+
+    file_size_t *file_size;
+
+    if (io->read_nocopy((void **) &file_size, sizeof(file_size_t), io->io_ctx) < sizeof(file_size_t)) {
         retval = READSTAT_ERROR_READ;
         goto cleanup;
     }
-    if (io->read(&page_size, sizeof(uint32_t), io->io_ctx) < sizeof(uint32_t)) {
-        retval = READSTAT_ERROR_READ;
-        goto cleanup;
-    }
 
-    hinfo->header_size = bswap ? byteswap4(header_size) : header_size;
-    hinfo->page_size = bswap ? byteswap4(page_size) : page_size;
+     //if (io->read(&header_size, sizeof(uint32_t), io->io_ctx) < sizeof(uint32_t)) {
+     //    retval = READSTAT_ERROR_READ;
+     //    goto cleanup;
+     //}
+     //if (io->read(&page_size, sizeof(uint32_t), io->io_ctx) < sizeof(uint32_t)) {
+     //    retval = READSTAT_ERROR_READ;
+     //    goto cleanup;
+     //}
+
+    hinfo->header_size = bswap ? byteswap4(file_size->header_size) : file_size->header_size;
+    hinfo->page_size = bswap ? byteswap4(file_size->page_size) : file_size->page_size;
 
     if (hinfo->header_size < 1024 || hinfo->page_size < 1024) {
         retval = READSTAT_ERROR_PARSE;
@@ -278,19 +305,19 @@ readstat_error_t sas_read_header(readstat_io_t *io, sas_header_info_t *hinfo,
     }
 
     if (hinfo->u64) {
-        uint64_t page_count;
-        if (io->read(&page_count, sizeof(uint64_t), io->io_ctx) < sizeof(uint64_t)) {
+        uint64_t *page_count;
+        if (io->read_nocopy((void **) &page_count, sizeof(uint64_t), io->io_ctx) < sizeof(uint64_t)) {
             retval = READSTAT_ERROR_READ;
             goto cleanup;
         }
-        hinfo->page_count = bswap ? byteswap8(page_count) : page_count;
+        hinfo->page_count = bswap ? byteswap8(*page_count) : *page_count;
     } else {
-        uint32_t page_count;
-        if (io->read(&page_count, sizeof(uint32_t), io->io_ctx) < sizeof(uint32_t)) {
+        uint32_t *page_count;
+        if (io->read_nocopy((void **) &page_count, sizeof(uint32_t), io->io_ctx) < sizeof(uint32_t)) {
             retval = READSTAT_ERROR_READ;
             goto cleanup;
         }
-        hinfo->page_count = bswap ? byteswap4(page_count) : page_count;
+        hinfo->page_count = bswap ? byteswap4(*page_count) : *page_count;
     }
     if (hinfo->page_count > (1<<24)) {
         retval = READSTAT_ERROR_PARSE;
@@ -305,13 +332,13 @@ readstat_error_t sas_read_header(readstat_io_t *io, sas_header_info_t *hinfo,
         }
         goto cleanup;
     }
-    if (io->read(&header_end, sizeof(sas_header_end_t), io->io_ctx) < sizeof(sas_header_end_t)) {
+    if (io->read_nocopy((void **) &header_end, sizeof(sas_header_end_t), io->io_ctx) < sizeof(sas_header_end_t)) {
         retval = READSTAT_ERROR_READ;
         goto cleanup;
     }
     char major;
     int minor, revision;
-    if (sscanf(header_end.release, "%c.%04dM%1d", &major, &minor, &revision) != 3) {
+    if (sscanf(header_end->release, "%c.%04dM%1d", &major, &minor, &revision) != 3) {
         retval = READSTAT_ERROR_PARSE;
         goto cleanup;
     }

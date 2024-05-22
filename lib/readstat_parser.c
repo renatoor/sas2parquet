@@ -84,8 +84,8 @@ readstat_error_t readstat_set_read_handler(readstat_parser_t *parser, readstat_r
     return READSTAT_OK;
 }
 
-readstat_error_t readstat_set_read_nocopy_handler(readstat_parser_t *parser, readstat_read_handler read_handler) {
-    parser->io->read = read_handler;
+readstat_error_t readstat_set_read_nocopy_handler(readstat_parser_t *parser, readstat_read_nocopy_handler read_handler) {
+    parser->io->read_nocopy = read_handler;
     return READSTAT_OK;
 }
 

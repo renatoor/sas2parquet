@@ -53,8 +53,9 @@ readstat_off_t mmap_seek_handler(readstat_off_t offset, readstat_io_flags_t when
       mmap_io_ctx->offset = offset;
       break;
     case READSTAT_SEEK_CUR:
-      mmap_io_ctx->curr_addr += offset;
+      //mmap_io_ctx->curr_addr += offset;
       mmap_io_ctx->offset += offset;
+      mmap_io_ctx->curr_addr = mmap_io_ctx->addr + mmap_io_ctx->offset;
       break;
     case READSTAT_SEEK_END:
       mmap_io_ctx->curr_addr = mmap_io_ctx->addr + mmap_io_ctx->length;
@@ -78,10 +79,10 @@ ssize_t mmap_read_handler(void *buf, size_t nbyte, void *io_ctx) {
   return nbyte;
 }
 
-ssize_t mmap_read_nocopy_handler(void *buf, size_t nbyte, void *io_ctx) {
+ssize_t mmap_read_nocopy_handler(void **buf, size_t nbyte, void *io_ctx) {
   mmap_io_ctx_t *mmap_io_ctx = (mmap_io_ctx_t *) io_ctx;
 
-  buf = mmap_io_ctx->curr_addr;
+  *buf = mmap_io_ctx->curr_addr;
 
   mmap_io_ctx->offset += nbyte;
   mmap_io_ctx->curr_addr += nbyte;
