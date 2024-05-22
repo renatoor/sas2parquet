@@ -1,4 +1,5 @@
 CompileFlags:
   Add:
+    - "-I/Users/renato/Documents/Projects/sas2parquet/include" 
     - "-I/nix/store/a7jigkssksnfznda3aaz4gwamv31v0nz-arrow-cpp-14.0.1/include" 
     - "-I/nix/store/cr2i26njv3wrqa5aa191agpi46dqwcd8-readstat-1.1.9/include" 

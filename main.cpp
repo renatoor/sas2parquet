@@ -13,6 +13,7 @@
 #include <fcntl.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <iostream>
 
 typedef struct mmap_io_ctx_s {
   int fd;
@@ -77,6 +78,17 @@ ssize_t mmap_read_handler(void *buf, size_t nbyte, void *io_ctx) {
   return nbyte;
 }
 
+ssize_t mmap_read_nocopy_handler(void *buf, size_t nbyte, void *io_ctx) {
+  mmap_io_ctx_t *mmap_io_ctx = (mmap_io_ctx_t *) io_ctx;
+
+  buf = mmap_io_ctx->curr_addr;
+
+  mmap_io_ctx->offset += nbyte;
+  mmap_io_ctx->curr_addr += nbyte;
+
+  return nbyte;
+}
+
 int mmap_close_handler(void *io_ctx) {
   mmap_io_ctx_t *mmap_io_ctx = (mmap_io_ctx_t *) io_ctx;
 
@@ -90,6 +102,7 @@ readstat_error_t mmap_io_init(readstat_parser_t *parser) {
   readstat_set_open_handler(parser, mmap_open_handler);
   readstat_set_close_handler(parser, mmap_close_handler);
   readstat_set_read_handler(parser, mmap_read_handler);
+  readstat_set_read_nocopy_handler(parser, mmap_read_nocopy_handler);
   readstat_set_seek_handler(parser, mmap_seek_handler);
 
 
@@ -156,6 +169,8 @@ public:
   arrow::Status Finish() {
     ARROW_ASSIGN_OR_RAISE(_batch, _batch_builder->Flush());
     ARROW_RETURN_NOT_OK(_batch->ValidateFull());
+
+    std::cout << _batch->ToString() << std::endl;
 
     return arrow::Status::OK();
   }
@@ -332,7 +347,7 @@ private:
 };
 
 int main(int argc, char *argv[]) {
-    if (argc != 3) {
+    if (argc != 2) {
         printf("Usage: %s <filename> <parquet_filename>\n", argv[0]);
         return 1;
     }
@@ -342,7 +357,7 @@ int main(int argc, char *argv[]) {
     parser.Parse(argv[1]);
 
     auto status = parser.Finish();
-    auto status2 = parser.WriteParquet(argv[2]);
+    // auto status2 = parser.WriteParquet(argv[2]);
 
     return 0;
 }
