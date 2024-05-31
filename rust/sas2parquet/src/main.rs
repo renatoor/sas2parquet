@@ -666,15 +666,69 @@ struct Metadata {
 }
 
 impl Metadata {
-    pub fn new() -> Self {
+    pub fn new(pages: &Vec<Page>) -> Self {
+        let subheaders = pages.iter().flat_map(|page| page.subheaders()).collect::<Vec<_>>();
+
+        let text_subheaders = subheaders.iter().filter_map(|subheader| match &subheader.subheader_type {
+               PageSubheaderType::Text(subheader) => Some(subheader),
+               _ => None,
+           })
+           .collect::<Vec<_>>();
+
+        let mut row_length = 0;
+        let mut total_row_count = 0;
+        let mut column_count = 0;
+        let mut column_names = Vec::new();
+        let mut column_attrs = Vec::new();
+        let mut formats = Vec::new();
+        let mut labels = Vec::new();
+
+        for subheader in &subheaders {
+            match &subheader.subheader_type {
+                PageSubheaderType::RowSize(subheader) => {
+                    row_length = subheader.row_length;
+                    total_row_count = subheader.total_row_count;
+                }
+                PageSubheaderType::ColumnSize(subheader) => {
+                    column_count = subheader.columns_count;
+                }
+                PageSubheaderType::ColumnName(subheader) => {
+                    for column_name_pointer in subheader.column_name_pointers() {
+                        let text_header = &text_subheaders[column_name_pointer.index];
+                        column_names.push(
+                            text_header
+                                .text_from_ref(&column_name_pointer)
+                                .trim()
+                                .to_string(),
+                        );
+                    }
+                }
+                PageSubheaderType::ColumnAttrs(subheader) => {
+                    column_attrs.extend(subheader.column_attr_vectors());
+                }
+                PageSubheaderType::ColumnFormat(subheader) => {
+                    let format_ref = subheader.format_ref();
+                    let text_header = &text_subheaders[format_ref.index];
+
+                    formats.push(text_header.text_from_ref(&format_ref).trim().to_string());
+
+                    let label_ref = subheader.label_ref();
+                    let text_header = &text_subheaders[label_ref.index];
+
+                    labels.push(text_header.text_from_ref(&label_ref).trim().to_string());
+                }
+                _ => {}
+            }
+        }
+
         Self {
-            row_length: 0,
-            total_row_count: 0,
-            column_count: 0,
-            column_names: Vec::new(),
-            column_attrs: Vec::new(),
-            formats: Vec::new(),
-            labels: Vec::new(),
+            row_length,
+            total_row_count,
+            column_count,
+            column_names,
+            column_attrs,
+            formats,
+            labels,
         }
     }
 }
@@ -719,63 +773,6 @@ impl<'a> Page<'a> {
         }
     }
 
-    pub fn parse_metadata(&self, metadata: &mut Metadata) {
-        let subheader_pointers = self.subheader_pointers();
-
-        let text_headers = subheader_pointers
-            .iter()
-            .filter_map(|pointer| match &pointer.subheader_type {
-                PageSubheaderType::Text(subheader) => Some(subheader),
-                _ => None,
-            })
-            .collect::<Vec<_>>();
-
-        for subheader_pointer in &subheader_pointers {
-            match &subheader_pointer.subheader_type {
-                PageSubheaderType::RowSize(subheader) => {
-                    metadata.row_length = subheader.row_length;
-                    metadata.total_row_count = subheader.total_row_count;
-                }
-                PageSubheaderType::ColumnSize(subheader) => {
-                    metadata.column_count = subheader.columns_count;
-                }
-                PageSubheaderType::ColumnName(subheader) => {
-                    for column_name_pointer in subheader.column_name_pointers() {
-                        let text_header = &text_headers[column_name_pointer.index];
-                        metadata.column_names.push(
-                            text_header
-                                .text_from_ref(&column_name_pointer)
-                                .trim()
-                                .to_string(),
-                        );
-                    }
-                }
-                PageSubheaderType::ColumnAttrs(subheader) => {
-                    metadata
-                        .column_attrs
-                        .extend(subheader.column_attr_vectors());
-                }
-                PageSubheaderType::ColumnFormat(subheader) => {
-                    let format_ref = subheader.format_ref();
-                    let text_header = &text_headers[format_ref.index];
-
-                    metadata
-                        .formats
-                        .push(text_header.text_from_ref(&format_ref).trim().to_string());
-
-                    let label_ref = subheader.label_ref();
-                    let text_header = &text_headers[label_ref.index];
-
-                    metadata
-                        .labels
-                        .push(text_header.text_from_ref(&label_ref).trim().to_string());
-                }
-                PageSubheaderType::CompressedBinaryData => {}
-                _ => {}
-            }
-        }
-    }
-
     fn parse_data(&self, metadata: &Metadata) {
         let subheader_pointers_count = self.header.subheader_pointers_count() as usize;
         let data_block_count = self.header.data_block_count() as usize;
@@ -810,7 +807,7 @@ impl<'a> Page<'a> {
         }
     }
 
-    fn subheader_pointers(&self) -> Vec<PageSubheader> {
+    pub fn subheaders(&self) -> Vec<PageSubheader> {
         let subheader_pointers_count = self.header.subheader_pointers_count() as usize;
         let offset = self.align + 8;
 
@@ -859,17 +856,12 @@ impl<'a> Parser<'a> {
             })
             .collect::<Vec<_>>();
 
-        let mut metadata = Metadata::new();
+        let metadata = Metadata::new(&pages);
+        println!("{:?}", metadata);
 
-        pages
-            .iter()
-            .for_each(|page| page.parse_metadata(&mut metadata));
-
-        //let schema = Arc::new(Schema::from(&metadata));
-
-        pages
-            .par_iter()
-            .for_each(|page| page.parse_data(&metadata));
+        // pages
+        //     .par_iter()
+        //     .for_each(|page| page.parse_data(&metadata));
 
     }
 }
