@@ -1,18 +1,19 @@
 mod decoder;
 
+use arrow::array::{ArrayBuilder, Float64Builder, StringBuilder};
+use arrow::datatypes::{DataType, Field, Schema};
 use byteorder::ByteOrder;
 use chrono::{prelude::*, TimeDelta};
 use decoder::Decoder;
 use memmap2::Mmap;
+use rayon::prelude::*;
 use std::borrow::Cow;
+use std::boxed::Box;
 use std::convert::From;
+use std::env;
 use std::fs::File;
 use std::sync::Arc;
-use std::boxed::Box;
 use zerocopy::byteorder;
-use rayon::prelude::*;
-use arrow::datatypes::{DataType, Field, Schema};
-use arrow::array::{ArrayBuilder, Float64Builder, StringBuilder};
 
 #[derive(Debug)]
 enum Endianness {
@@ -620,31 +621,32 @@ impl<'a> PageSubheader<'a> {
             Compression::Compressed => PageSubheaderType::CompressedBinaryData,
             _ => {
                 let signature = if ctx.is_64_bits {
-                    match ctx.endianness {
-                        Endianness::BigEndian => ctx.endianness.read_u32(&buffer[4..8]),
-                        Endianness::LittleEndian => ctx.endianness.read_u32(&buffer[0..4]),
-                    }
+                    ctx.endianness.read_u64(&buffer[0..8])
                 } else {
-                    ctx.endianness.read_u32(&buffer[0..4])
+                    u64::from(ctx.endianness.read_u32(&buffer[0..4]))
                 };
 
                 match signature {
-                    0xF7F7F7F7 => PageSubheaderType::RowSize(RowSizeSubheader::new(ctx, buffer)),
-                    0xF6F6F6F6 => {
+                    0xF7F7F7F7 | 0xF7F7F7F700000000 => {
+                        PageSubheaderType::RowSize(RowSizeSubheader::new(ctx, buffer))
+                    }
+                    0xF6F6F6F6 | 0xF6F6F6F600000000 => {
                         PageSubheaderType::ColumnSize(ColumnSizeSubheader::new(ctx, buffer))
                     }
-                    0xFFFFFC00 => PageSubheaderType::Counts,
-                    0xFFFFFFFD => PageSubheaderType::Text(TextSubheader::new(ctx, buffer)),
-                    0xFFFFFFFF => {
+                    0xFFFFFC00 | 0xFFFFFFFFFFFFFC00 => PageSubheaderType::Counts,
+                    0xFFFFFFFD | 0xFFFFFFFFFFFFFFFD => {
+                        PageSubheaderType::Text(TextSubheader::new(ctx, buffer))
+                    }
+                    0xFFFFFFFF | 0xFFFFFFFFFFFFFFFF => {
                         PageSubheaderType::ColumnName(ColumnNameSubheader::new(ctx, buffer))
                     }
-                    0xFFFFFFFC => {
+                    0xFFFFFFFC | 0xFFFFFFFFFFFFFFFC => {
                         PageSubheaderType::ColumnAttrs(ColumnAttrsSubheader::new(ctx, buffer))
                     }
-                    0xFFFFFBFE => {
+                    0xFFFFFBFE | 0xFFFFFFFFFFFFFBFE => {
                         PageSubheaderType::ColumnFormat(ColumnFormatSubheader::new(ctx, buffer))
                     }
-                    0xFFFFFFFE => PageSubheaderType::ColumnList,
+                    0xFFFFFFFE | 0xFFFFFFFFFFFFFFFE => PageSubheaderType::ColumnList,
                     _ => panic!("Invalid page subheader signature"),
                 }
             }
@@ -667,13 +669,18 @@ struct Metadata {
 
 impl Metadata {
     pub fn new(pages: &Vec<Page>) -> Self {
-        let subheaders = pages.iter().flat_map(|page| page.subheaders()).collect::<Vec<_>>();
+        let subheaders = pages
+            .iter()
+            .flat_map(|page| page.subheaders())
+            .collect::<Vec<_>>();
 
-        let text_subheaders = subheaders.iter().filter_map(|subheader| match &subheader.subheader_type {
-               PageSubheaderType::Text(subheader) => Some(subheader),
-               _ => None,
-           })
-           .collect::<Vec<_>>();
+        let text_subheaders = subheaders
+            .iter()
+            .filter_map(|subheader| match &subheader.subheader_type {
+                PageSubheaderType::Text(subheader) => Some(subheader),
+                _ => None,
+            })
+            .collect::<Vec<_>>();
 
         let mut row_length = 0;
         let mut total_row_count = 0;
@@ -744,7 +751,8 @@ impl From<&Metadata> for Schema {
                     ColumnType::Character => Field::new(name, DataType::Utf8, true),
                     ColumnType::Numeric => Field::new(name, DataType::Float64, true),
                 }
-            }).collect::<Vec<_>>();
+            })
+            .collect::<Vec<_>>();
 
         Self::new(fields)
     }
@@ -757,12 +765,14 @@ struct Page<'a> {
     align: usize,
     buffer: &'a [u8],
     header: PageHeader<'a>,
+    page_type: PageType,
 }
 
 impl<'a> Page<'a> {
     pub fn new(ctx: &'a ParserContext, buffer: &'a [u8]) -> Self {
         let (align, subheader_pointer_length) = if ctx.is_64_bits { (32, 24) } else { (16, 12) };
         let header = PageHeader::new(ctx, align, &buffer[0..align + 6]);
+        let page_type = header.page_type();
 
         Self {
             ctx,
@@ -770,6 +780,7 @@ impl<'a> Page<'a> {
             subheader_pointer_length,
             buffer,
             header,
+            page_type,
         }
     }
 
@@ -849,6 +860,8 @@ impl<'a> Parser<'a> {
         let decoder = header.decoder();
         let ctx = ParserContext::new(is_64_bits, endianness, decoder);
 
+        println!("{:?}", ctx);
+
         let pages = (0..header.page_count() as usize)
             .map(|index| {
                 let offset = header_length + index * page_length;
@@ -857,18 +870,19 @@ impl<'a> Parser<'a> {
             .collect::<Vec<_>>();
 
         let metadata = Metadata::new(&pages);
-        println!("{:?}", metadata);
+        println!("{:#?}", metadata);
 
-        // pages
-        //     .par_iter()
-        //     .for_each(|page| page.parse_data(&metadata));
-
+        // for page in pages {
+        //     println!("{:?}", page.page_type);
+        // }
+        pages.iter().for_each(|page| page.parse_data(&metadata));
     }
 }
 
 fn main() -> std::io::Result<()> {
-    //let file = File::open("weigth2.sas7bdat")?;
-    let file = File::open("Final_Candy.sas7bdat")?;
+    let args: Vec<String> = env::args().collect();
+    let file = File::open(&args[1])?;
+    //let file = File::open("Final_Candy.sas7bdat")?;
     //let file = File::open("airline.sas7bdat")?;
     let mmap = unsafe { Mmap::map(&file)? };
     let parser = Parser::new(&mmap[..]);
