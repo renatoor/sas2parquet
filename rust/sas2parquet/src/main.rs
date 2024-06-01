@@ -1,19 +1,13 @@
 mod decoder;
 
-use arrow::array::{ArrayBuilder, Float64Builder, StringBuilder};
 use arrow::datatypes::{DataType, Field, Schema};
-use byteorder::ByteOrder;
 use chrono::{prelude::*, TimeDelta};
 use decoder::Decoder;
 use memmap2::Mmap;
-use rayon::prelude::*;
 use std::borrow::Cow;
-use std::boxed::Box;
 use std::convert::From;
 use std::env;
 use std::fs::File;
-use std::sync::Arc;
-use zerocopy::byteorder;
 
 #[derive(Debug)]
 enum Endianness {
@@ -34,22 +28,22 @@ impl From<u8> for Endianness {
 impl Endianness {
     pub fn read_u16(&self, bytes: &[u8]) -> u16 {
         match self {
-            Self::BigEndian => byteorder::BigEndian::read_u16(bytes),
-            Self::LittleEndian => byteorder::LittleEndian::read_u16(bytes),
+            Self::BigEndian => u16::from_be_bytes(bytes[..2].try_into().unwrap()),
+            Self::LittleEndian => u16::from_le_bytes(bytes[..2].try_into().unwrap()),
         }
     }
 
     pub fn read_u32(&self, bytes: &[u8]) -> u32 {
         match self {
-            Self::BigEndian => byteorder::BigEndian::read_u32(bytes),
-            Self::LittleEndian => byteorder::LittleEndian::read_u32(bytes),
+            Self::BigEndian => u32::from_be_bytes(bytes[..4].try_into().unwrap()),
+            Self::LittleEndian => u32::from_le_bytes(bytes[..4].try_into().unwrap()),
         }
     }
 
     pub fn read_u64(&self, bytes: &[u8]) -> u64 {
         match self {
-            Self::BigEndian => byteorder::BigEndian::read_u64(bytes),
-            Self::LittleEndian => byteorder::LittleEndian::read_u64(bytes),
+            Self::BigEndian => u64::from_be_bytes(bytes[..8].try_into().unwrap()),
+            Self::LittleEndian => u64::from_le_bytes(bytes[..8].try_into().unwrap()),
         }
     }
 
@@ -104,9 +98,9 @@ struct TextRef {
 
 impl TextRef {
     pub fn new(ctx: &ParserContext, buffer: &[u8]) -> Self {
-        let index = usize::try_from(ctx.endianness.read_u16(&buffer[0..2])).unwrap();
-        let offset = usize::try_from(ctx.endianness.read_u16(&buffer[2..4])).unwrap();
-        let length = usize::try_from(ctx.endianness.read_u16(&buffer[4..6])).unwrap();
+        let index = ctx.endianness.read_u16(&buffer[0..2]).into();
+        let offset = ctx.endianness.read_u16(&buffer[2..4]).into();
+        let length = ctx.endianness.read_u16(&buffer[4..6]).into();
 
         Self {
             index,
@@ -217,25 +211,31 @@ impl<'a> Header<'a> {
         )
     }
 
-    pub fn header_length(&self) -> u32 {
+    pub fn header_length(&self) -> usize {
         self.endianness
             .read_u32(&self.buffer[196 + self.align1..200 + self.align1])
+            .try_into()
+            .unwrap()
     }
 
-    pub fn page_length(&self) -> u32 {
+    pub fn page_length(&self) -> usize {
         self.endianness
             .read_u32(&self.buffer[200 + self.align1..204 + self.align1])
+            .try_into()
+            .unwrap()
     }
 
-    pub fn page_count(&self) -> u64 {
+    pub fn page_count(&self) -> usize {
         if self.is_64_bits {
             self.endianness
                 .read_u64(&self.buffer[204 + self.align1..208 + self.total_align])
+                .try_into()
+                .unwrap()
         } else {
-            u64::from(
-                self.endianness
-                    .read_u32(&self.buffer[204 + self.align1..208 + self.total_align]),
-            )
+            self.endianness
+                .read_u32(&self.buffer[204 + self.align1..208 + self.total_align])
+                .try_into()
+                .unwrap()
         }
     }
 
@@ -287,16 +287,18 @@ impl<'a> PageHeader<'a> {
         )
     }
 
-    pub fn data_block_count(&self) -> u16 {
+    pub fn data_block_count(&self) -> usize {
         self.ctx
             .endianness
             .read_u16(&self.buffer[self.align + 2..self.align + 4])
+            .into()
     }
 
-    pub fn subheader_pointers_count(&self) -> u16 {
+    pub fn subheader_pointers_count(&self) -> usize {
         self.ctx
             .endianness
             .read_u16(&self.buffer[self.align + 4..self.align + 6])
+            .into()
     }
 }
 
@@ -330,15 +332,15 @@ impl PageSubheaderPointer {
     pub fn new(ctx: &ParserContext, buffer: &[u8]) -> Self {
         let (offset, length, compression, is_compressed) = if ctx.is_64_bits {
             (
-                ctx.endianness.read_u64(&buffer[0..8]) as usize,
-                ctx.endianness.read_u64(&buffer[8..16]) as usize,
+                ctx.endianness.read_u64(&buffer[0..8]).try_into().unwrap(),
+                ctx.endianness.read_u64(&buffer[8..16]).try_into().unwrap(),
                 Compression::from(buffer[16]),
                 buffer[17] == 1,
             )
         } else {
             (
-                u64::from(ctx.endianness.read_u32(&buffer[0..4])) as usize,
-                u64::from(ctx.endianness.read_u32(&buffer[4..8])) as usize,
+                ctx.endianness.read_u32(&buffer[0..4]).try_into().unwrap(),
+                ctx.endianness.read_u32(&buffer[4..8]).try_into().unwrap(),
                 Compression::from(buffer[8]),
                 buffer[9] == 1,
             )
@@ -351,29 +353,25 @@ impl PageSubheaderPointer {
             is_compressed,
         }
     }
-
-    pub fn is_valid(&self) -> bool {
-        true
-    }
 }
 
 #[derive(Debug)]
 struct RowSizeSubheader {
-    row_length: u64,
-    total_row_count: u64,
+    row_length: usize,
+    total_row_count: usize,
 }
 
 impl RowSizeSubheader {
     pub fn new(ctx: &ParserContext, buffer: &[u8]) -> Self {
         let (row_length, total_row_count) = if ctx.is_64_bits {
             (
-                ctx.endianness.read_u64(&buffer[40..48]),
-                ctx.endianness.read_u64(&buffer[48..56]),
+                ctx.endianness.read_u64(&buffer[40..48]).try_into().unwrap(),
+                ctx.endianness.read_u64(&buffer[48..56]).try_into().unwrap(),
             )
         } else {
             (
-                u64::from(ctx.endianness.read_u32(&buffer[20..24])),
-                u64::from(ctx.endianness.read_u32(&buffer[24..28])),
+                ctx.endianness.read_u32(&buffer[20..24]).try_into().unwrap(),
+                ctx.endianness.read_u32(&buffer[24..28]).try_into().unwrap(),
             )
         };
 
@@ -386,15 +384,15 @@ impl RowSizeSubheader {
 
 #[derive(Debug)]
 struct ColumnSizeSubheader {
-    columns_count: u64,
+    columns_count: usize,
 }
 
 impl ColumnSizeSubheader {
     pub fn new(ctx: &ParserContext, buffer: &[u8]) -> Self {
         let columns_count = if ctx.is_64_bits {
-            ctx.endianness.read_u64(&buffer[8..16])
+            ctx.endianness.read_u64(&buffer[8..16]).try_into().unwrap()
         } else {
-            u64::from(ctx.endianness.read_u32(&buffer[4..8]))
+            ctx.endianness.read_u32(&buffer[4..8]).try_into().unwrap()
         };
 
         Self { columns_count }
@@ -411,15 +409,9 @@ struct TextSubheader<'a> {
 impl<'a> TextSubheader<'a> {
     pub fn new(ctx: &'a ParserContext, buffer: &'a [u8]) -> Self {
         let (length, text_buffer) = if ctx.is_64_bits {
-            (
-                ctx.endianness.read_u16(&buffer[8..10]) as usize,
-                &buffer[8..],
-            )
+            (ctx.endianness.read_u16(&buffer[8..10]).into(), &buffer[8..])
         } else {
-            (
-                ctx.endianness.read_u16(&buffer[4..6]) as usize,
-                &buffer[4..],
-            )
+            (ctx.endianness.read_u16(&buffer[4..6]).into(), &buffer[4..])
         };
 
         Self {
@@ -449,13 +441,13 @@ impl<'a> ColumnNameSubheader<'a> {
         let (_remaining_length, cmax, align) = if ctx.is_64_bits {
             (
                 ctx.endianness.read_u16(&buffer[8..10]),
-                (buffer.len() - 28) / 8 as usize,
+                (buffer.len() - 28) / 8,
                 16,
             )
         } else {
             (
                 ctx.endianness.read_u16(&buffer[4..6]),
-                (buffer.len() - 20) / 8 as usize,
+                (buffer.len() - 20) / 8,
                 12,
             )
         };
@@ -496,14 +488,14 @@ impl From<u8> for ColumnType {
 
 #[derive(Debug)]
 struct ColumnAttrVector {
-    offset: u64,
-    width: u32,
-    length: u16,
+    offset: usize,
+    width: usize,
+    length: usize,
     column_type: ColumnType,
 }
 
 impl ColumnAttrVector {
-    pub fn new(offset: u64, width: u32, length: u16, column_type: ColumnType) -> Self {
+    pub fn new(offset: usize, width: usize, length: usize, column_type: ColumnType) -> Self {
         Self {
             offset,
             width,
@@ -526,13 +518,13 @@ impl<'a> ColumnAttrsSubheader<'a> {
         let (_remaining_length, cmax, lcav) = if ctx.is_64_bits {
             (
                 ctx.endianness.read_u16(&buffer[8..10]),
-                (buffer.len() - 28) / 16 as usize,
+                (buffer.len() - 28) / 16,
                 16,
             )
         } else {
             (
                 ctx.endianness.read_u16(&buffer[4..6]),
-                (buffer.len() - 20) / 12 as usize,
+                (buffer.len() - 20) / 12,
                 12,
             )
         };
@@ -554,26 +546,34 @@ impl<'a> ColumnAttrsSubheader<'a> {
                     (
                         self.ctx
                             .endianness
-                            .read_u64(&self.buffer[attr_offset..attr_offset + 8]),
+                            .read_u64(&self.buffer[attr_offset..attr_offset + 8])
+                            .try_into()
+                            .unwrap(),
                         attr_offset + 8,
                     )
                 } else {
                     (
-                        u64::from(
-                            self.ctx
-                                .endianness
-                                .read_u32(&self.buffer[attr_offset..attr_offset + 4]),
-                        ),
+                        self.ctx
+                            .endianness
+                            .read_u32(&self.buffer[attr_offset..attr_offset + 4])
+                            .try_into()
+                            .unwrap(),
                         attr_offset + 4,
                     )
                 };
 
-                let width = self.ctx.endianness.read_u32(&self.buffer[align..align + 4]);
+                let width = self
+                    .ctx
+                    .endianness
+                    .read_u32(&self.buffer[align..align + 4])
+                    .try_into()
+                    .unwrap();
 
                 let length = self
                     .ctx
                     .endianness
-                    .read_u16(&self.buffer[align + 4..align + 6]);
+                    .read_u16(&self.buffer[align + 4..align + 6])
+                    .into();
 
                 let column_type = ColumnType::from(self.buffer[align + 6]);
 
@@ -668,9 +668,9 @@ impl<'a> PageSubheader<'a> {
 
 #[derive(Debug)]
 struct Metadata {
-    row_length: u64,
-    total_row_count: u64,
-    column_count: u64,
+    row_length: usize,
+    total_row_count: usize,
+    column_count: usize,
     column_names: Vec<String>,
     column_attrs: Vec<ColumnAttrVector>,
     formats: Vec<String>,
@@ -681,6 +681,8 @@ impl Metadata {
     pub fn new(pages: &Vec<Page>) -> Self {
         let subheaders = pages
             .iter()
+            .take_while(|page| page.page_type != PageType::Data)
+            .filter(|page| page.page_type != PageType::Comp)
             .flat_map(|page| page.subheaders())
             .collect::<Vec<_>>();
 
@@ -711,9 +713,9 @@ impl Metadata {
                 }
                 PageSubheaderType::ColumnName(subheader) => {
                     for column_name_pointer in subheader.column_name_pointers() {
-                        let text_header = &text_subheaders[column_name_pointer.index];
+                        let text_subheader = &text_subheaders[column_name_pointer.index];
                         column_names.push(
-                            text_header
+                            text_subheader
                                 .text_from_ref(&column_name_pointer)
                                 .trim()
                                 .to_string(),
@@ -725,14 +727,14 @@ impl Metadata {
                 }
                 PageSubheaderType::ColumnFormat(subheader) => {
                     let format_ref = subheader.format_ref();
-                    let text_header = &text_subheaders[format_ref.index];
+                    let text_subheader = &text_subheaders[format_ref.index];
 
-                    formats.push(text_header.text_from_ref(&format_ref).trim().to_string());
+                    formats.push(text_subheader.text_from_ref(&format_ref).trim().to_string());
 
                     let label_ref = subheader.label_ref();
-                    let text_header = &text_subheaders[label_ref.index];
+                    let text_subheader = &text_subheaders[label_ref.index];
 
-                    labels.push(text_header.text_from_ref(&label_ref).trim().to_string());
+                    labels.push(text_subheader.text_from_ref(&label_ref).trim().to_string());
                 }
                 _ => {}
             }
@@ -752,7 +754,7 @@ impl Metadata {
 
 impl From<&Metadata> for Schema {
     fn from(metadata: &Metadata) -> Self {
-        let fields = (0..metadata.column_count as usize)
+        let fields = (0..metadata.column_count)
             .map(|index| {
                 let name = &metadata.column_names[index];
                 let column_type = &metadata.column_attrs[index].column_type;
@@ -772,6 +774,7 @@ impl From<&Metadata> for Schema {
 struct Page<'a> {
     ctx: &'a ParserContext<'a>,
     subheader_pointer_length: usize,
+    subheader_pointers_count: usize,
     align: usize,
     buffer: &'a [u8],
     header: PageHeader<'a>,
@@ -783,11 +786,13 @@ impl<'a> Page<'a> {
         let (align, subheader_pointer_length) = if ctx.is_64_bits { (32, 24) } else { (16, 12) };
         let header = PageHeader::new(ctx, align, &buffer[0..align + 6]);
         let page_type = header.page_type();
+        let subheader_pointers_count = header.subheader_pointers_count();
 
         Self {
             ctx,
             align,
             subheader_pointer_length,
+            subheader_pointers_count,
             buffer,
             header,
             page_type,
@@ -795,11 +800,10 @@ impl<'a> Page<'a> {
     }
 
     fn parse_data(&self, metadata: &Metadata) {
-        let subheader_pointers_count = self.header.subheader_pointers_count() as usize;
-        let data_block_count = self.header.data_block_count() as usize;
-        let rows_count = data_block_count - subheader_pointers_count;
+        let rows_count = self.header.data_block_count() - self.subheader_pointers_count;
         let data_buffer = {
-            let offset = self.align + 8 + subheader_pointers_count * self.subheader_pointer_length;
+            let offset =
+                self.align + 8 + self.subheader_pointers_count * self.subheader_pointer_length;
             let offset = offset + (offset % 8);
             &self.buffer[offset..]
         };
@@ -807,8 +811,8 @@ impl<'a> Page<'a> {
         for i in 0..rows_count {
             print!("ROW {} ", i);
             for column_attr in &metadata.column_attrs {
-                let offset = column_attr.offset as usize + i * metadata.row_length as usize;
-                let width = column_attr.width as usize;
+                let offset = column_attr.offset + i * metadata.row_length;
+                let width = column_attr.width;
 
                 match column_attr.column_type {
                     ColumnType::Character => {
@@ -832,12 +836,9 @@ impl<'a> Page<'a> {
     }
 
     pub fn subheaders(&self) -> Vec<PageSubheader> {
-        let subheader_pointers_count = self.header.subheader_pointers_count() as usize;
-        let offset = self.align + 8;
-
-        (0..subheader_pointers_count)
+        (0..self.subheader_pointers_count)
             .map(|index| {
-                let pointer_offset = offset + index * self.subheader_pointer_length;
+                let pointer_offset = self.align + 8 + index * self.subheader_pointer_length;
                 let pointer_buffer =
                     &self.buffer[pointer_offset..pointer_offset + self.subheader_pointer_length];
                 PageSubheaderPointer::new(self.ctx, pointer_buffer)
@@ -866,8 +867,8 @@ impl<'a> Parser<'a> {
 
         header.check_magic_number();
 
-        let header_length = header.header_length() as usize;
-        let page_length = header.page_length() as usize;
+        let header_length = header.header_length();
+        let page_length = header.page_length();
         let is_64_bits = header.is_64_bits;
         let endianness = header.endianness();
         let decoder = header.decoder();
@@ -875,7 +876,7 @@ impl<'a> Parser<'a> {
 
         println!("{:?}", ctx);
 
-        let pages = (0..header.page_count() as usize)
+        let pages = (0..header.page_count())
             .map(|index| {
                 let offset = header_length + index * page_length;
                 Page::new(&ctx, &self.buffer[offset..offset + page_length])
@@ -884,6 +885,8 @@ impl<'a> Parser<'a> {
 
         let metadata = Metadata::new(&pages);
 
+        println!("{:?}", metadata);
+
         pages.iter().for_each(|page| page.parse_data(&metadata));
     }
 }
@@ -891,8 +894,6 @@ impl<'a> Parser<'a> {
 fn main() -> std::io::Result<()> {
     let args: Vec<String> = env::args().collect();
     let file = File::open(&args[1])?;
-    //let file = File::open("Final_Candy.sas7bdat")?;
-    //let file = File::open("airline.sas7bdat")?;
     let mmap = unsafe { Mmap::map(&file)? };
     let parser = Parser::new(&mmap[..]);
 
