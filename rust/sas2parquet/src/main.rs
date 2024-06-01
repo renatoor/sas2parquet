@@ -15,12 +15,14 @@ enum Endianness {
     LittleEndian,
 }
 
-impl From<u8> for Endianness {
-    fn from(byte: u8) -> Self {
+impl TryFrom<u8> for Endianness {
+    type Error = &'static str;
+
+    fn try_from(byte: u8) -> Result<Self, Self::Error> {
         match byte {
-            0x00 => Self::BigEndian,
-            0x01 => Self::LittleEndian,
-            _ => panic!("ERROW"),
+            0x00 => Ok(Self::BigEndian),
+            0x01 => Ok(Self::LittleEndian),
+            _ => Err("Invalid byte order"),
         }
     }
 }
@@ -84,8 +86,8 @@ impl From<u8> for Platform {
 
 fn convert_sas_timestamp(timestamp: f64) -> DateTime<Utc> {
     let sas_date_start = Utc.with_ymd_and_hms(1960, 1, 1, 0, 0, 0).unwrap();
-    let seconds = timestamp.floor() as i64;
-    let time_delta = TimeDelta::seconds(seconds);
+    let milliseconds = (timestamp * 1000.0) as i64;
+    let time_delta = TimeDelta::milliseconds(milliseconds);
     sas_date_start + time_delta
 }
 
@@ -110,7 +112,7 @@ impl TextRef {
     }
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Copy, Clone)]
 enum PageType {
     Meta,
     Data,
@@ -119,16 +121,18 @@ enum PageType {
     Comp,
 }
 
-impl From<u16> for PageType {
-    fn from(byte: u16) -> Self {
+impl TryFrom<u16> for PageType {
+    type Error = &'static str;
+
+    fn try_from(byte: u16) -> Result<Self, Self::Error> {
         match byte {
-            0x0000 => Self::Meta,
-            0x0100 => Self::Data,
-            0x0200 => Self::Mix,
-            0x0400 => Self::Amd,
-            0x4000 => Self::Meta,
-            0x9000 => Self::Comp,
-            _ => panic!("Invalid page type"),
+            0x0000 => Ok(Self::Meta),
+            0x0100 => Ok(Self::Data),
+            0x0200 => Ok(Self::Mix),
+            0x0400 => Ok(Self::Amd),
+            0x4000 => Ok(Self::Meta),
+            0x9000 => Ok(Self::Comp),
+            _ => Err("Invalid page type"),
         }
     }
 }
@@ -156,8 +160,8 @@ impl<'a> Header<'a> {
         let total_align = align1 + align2;
         let total_header_size = HEADER_SIZE + align1 + align2;
         let header_buffer = &buffer[0..total_header_size];
-        let endianness = Endianness::from(buffer[37]);
-        let decoder = Decoder::from(buffer[70]);
+        let endianness = buffer[37].try_into().unwrap();
+        let decoder = buffer[70].into();
 
         Self {
             buffer: header_buffer,
@@ -186,7 +190,7 @@ impl<'a> Header<'a> {
     }
 
     pub fn platform(&self) -> Platform {
-        Platform::from(self.buffer[39])
+        self.buffer[39].into()
     }
 
     pub fn decoder(&self) -> &Decoder {
@@ -268,37 +272,35 @@ impl<'a> ParserContext<'a> {
 }
 
 #[derive(Debug)]
-struct PageHeader<'a> {
-    ctx: &'a ParserContext<'a>,
-    align: usize,
-    buffer: &'a [u8],
+struct PageHeader {
+    page_type: PageType,
+    data_block_count: usize,
+    subheader_pointers_count: usize,
 }
 
-impl<'a> PageHeader<'a> {
-    pub fn new(ctx: &'a ParserContext, align: usize, buffer: &'a [u8]) -> Self {
-        Self { ctx, align, buffer }
-    }
-
-    pub fn page_type(&self) -> PageType {
-        PageType::from(
-            self.ctx
-                .endianness
-                .read_u16(&self.buffer[self.align..self.align + 2]),
-        )
-    }
-
-    pub fn data_block_count(&self) -> usize {
-        self.ctx
+impl PageHeader {
+    pub fn new(ctx: &ParserContext, align: usize, buffer: &[u8]) -> Self {
+        let page_type = ctx
             .endianness
-            .read_u16(&self.buffer[self.align + 2..self.align + 4])
-            .into()
-    }
+            .read_u16(&buffer[align..align + 2])
+            .try_into()
+            .unwrap();
 
-    pub fn subheader_pointers_count(&self) -> usize {
-        self.ctx
+        let data_block_count = ctx
             .endianness
-            .read_u16(&self.buffer[self.align + 4..self.align + 6])
-            .into()
+            .read_u16(&buffer[align + 2..align + 4])
+            .into();
+
+        let subheader_pointers_count = ctx
+            .endianness
+            .read_u16(&buffer[align + 4..align + 6])
+            .into();
+
+        Self {
+            page_type,
+            data_block_count,
+            subheader_pointers_count,
+        }
     }
 }
 
@@ -309,13 +311,15 @@ enum Compression {
     Compressed,
 }
 
-impl From<u8> for Compression {
-    fn from(byte: u8) -> Self {
+impl TryFrom<u8> for Compression {
+    type Error = &'static str;
+
+    fn try_from(byte: u8) -> Result<Self, Self::Error> {
         match byte {
-            0x00 => Self::Uncompressed,
-            0x01 => Self::Truncated,
-            0x04 => Self::Compressed,
-            _ => panic!("Invalid compression"),
+            0x00 => Ok(Self::Uncompressed),
+            0x01 => Ok(Self::Truncated),
+            0x04 => Ok(Self::Compressed),
+            _ => Err("Invalid compression"),
         }
     }
 }
@@ -334,14 +338,14 @@ impl PageSubheaderPointer {
             (
                 ctx.endianness.read_u64(&buffer[0..8]).try_into().unwrap(),
                 ctx.endianness.read_u64(&buffer[8..16]).try_into().unwrap(),
-                Compression::from(buffer[16]),
+                buffer[16].try_into().unwrap(),
                 buffer[17] == 1,
             )
         } else {
             (
                 ctx.endianness.read_u32(&buffer[0..4]).try_into().unwrap(),
                 ctx.endianness.read_u32(&buffer[4..8]).try_into().unwrap(),
-                Compression::from(buffer[8]),
+                buffer[8].try_into().unwrap(),
                 buffer[9] == 1,
             )
         };
@@ -476,12 +480,14 @@ enum ColumnType {
     Character,
 }
 
-impl From<u8> for ColumnType {
-    fn from(byte: u8) -> Self {
+impl TryFrom<u8> for ColumnType {
+    type Error = &'static str;
+
+    fn try_from(byte: u8) -> Result<Self, Self::Error> {
         match byte {
-            0x01 => Self::Numeric,
-            0x02 => Self::Character,
-            _ => panic!("Invalid column type"),
+            0x01 => Ok(Self::Numeric),
+            0x02 => Ok(Self::Character),
+            _ => Err("Invalid column type"),
         }
     }
 }
@@ -575,7 +581,7 @@ impl<'a> ColumnAttrsSubheader<'a> {
                     .read_u16(&self.buffer[align + 4..align + 6])
                     .into();
 
-                let column_type = ColumnType::from(self.buffer[align + 6]);
+                let column_type = self.buffer[align + 6].try_into().unwrap();
 
                 ColumnAttrVector::new(offset, width, length, column_type)
             })
@@ -633,14 +639,14 @@ impl<'a> PageSubheader<'a> {
                 let signature = if ctx.is_64_bits {
                     ctx.endianness.read_u64(&buffer[0..8])
                 } else {
-                    u64::from(ctx.endianness.read_u32(&buffer[0..4]))
+                    ctx.endianness.read_u32(&buffer[0..4]).into()
                 };
 
                 match signature {
-                    0xF7F7F7F7 | 0xF7F7F7F700000000 => {
+                    0xF7F7F7F7 | 0xF7F7F7F700000000 | 0xF7F7F7F7FFFFFBFE => {
                         PageSubheaderType::RowSize(RowSizeSubheader::new(ctx, buffer))
                     }
-                    0xF6F6F6F6 | 0xF6F6F6F600000000 => {
+                    0xF6F6F6F6 | 0xF6F6F6F600000000 | 0xF6F6F6F6FFFFFBFE => {
                         PageSubheaderType::ColumnSize(ColumnSizeSubheader::new(ctx, buffer))
                     }
                     0xFFFFFC00 | 0xFFFFFFFFFFFFFC00 => PageSubheaderType::Counts,
@@ -678,11 +684,25 @@ struct Metadata {
 }
 
 impl Metadata {
-    pub fn new(pages: &Vec<Page>) -> Self {
+    pub fn new(row_length: usize, total_row_count: usize, column_count: usize) -> Self {
+        Self {
+            row_length,
+            total_row_count,
+            column_count,
+            column_names: Vec::new(),
+            column_attrs: Vec::new(),
+            formats: Vec::new(),
+            labels: Vec::new(),
+        }
+    }
+}
+
+impl From<&Vec<Page<'_>>> for Metadata {
+    fn from(pages: &Vec<Page>) -> Self {
         let subheaders = pages
             .iter()
-            .take_while(|page| page.page_type != PageType::Data)
-            .filter(|page| page.page_type != PageType::Comp)
+            .take_while(|page| page.page_type() != PageType::Data)
+            .filter(|page| page.page_type() != PageType::Comp)
             .flat_map(|page| page.subheaders())
             .collect::<Vec<_>>();
 
@@ -694,61 +714,53 @@ impl Metadata {
             })
             .collect::<Vec<_>>();
 
-        let mut row_length = 0;
-        let mut total_row_count = 0;
-        let mut column_count = 0;
-        let mut column_names = Vec::new();
-        let mut column_attrs = Vec::new();
-        let mut formats = Vec::new();
-        let mut labels = Vec::new();
-
-        for subheader in &subheaders {
-            match &subheader.subheader_type {
-                PageSubheaderType::RowSize(subheader) => {
-                    row_length = subheader.row_length;
-                    total_row_count = subheader.total_row_count;
-                }
-                PageSubheaderType::ColumnSize(subheader) => {
-                    column_count = subheader.columns_count;
-                }
-                PageSubheaderType::ColumnName(subheader) => {
-                    for column_name_pointer in subheader.column_name_pointers() {
-                        let text_subheader = &text_subheaders[column_name_pointer.index];
-                        column_names.push(
-                            text_subheader
-                                .text_from_ref(&column_name_pointer)
-                                .trim()
-                                .to_string(),
-                        );
+        subheaders
+            .iter()
+            .fold(Metadata::new(0, 0, 0), |mut metadata, subheader| {
+                match &subheader.subheader_type {
+                    PageSubheaderType::RowSize(subheader) => {
+                        metadata.row_length = subheader.row_length;
+                        metadata.total_row_count = subheader.total_row_count;
                     }
+                    PageSubheaderType::ColumnSize(subheader) => {
+                        metadata.column_count = subheader.columns_count;
+                    }
+                    PageSubheaderType::ColumnName(subheader) => {
+                        for column_name_pointer in subheader.column_name_pointers() {
+                            let text_subheader = &text_subheaders[column_name_pointer.index];
+                            metadata.column_names.push(
+                                text_subheader
+                                    .text_from_ref(&column_name_pointer)
+                                    .trim()
+                                    .to_string(),
+                            );
+                        }
+                    }
+                    PageSubheaderType::ColumnAttrs(subheader) => {
+                        metadata
+                            .column_attrs
+                            .extend(subheader.column_attr_vectors());
+                    }
+                    PageSubheaderType::ColumnFormat(subheader) => {
+                        let format_ref = subheader.format_ref();
+                        let text_subheader = &text_subheaders[format_ref.index];
+
+                        metadata
+                            .formats
+                            .push(text_subheader.text_from_ref(&format_ref).trim().to_string());
+
+                        let label_ref = subheader.label_ref();
+                        let text_subheader = &text_subheaders[label_ref.index];
+
+                        metadata
+                            .labels
+                            .push(text_subheader.text_from_ref(&label_ref).trim().to_string());
+                    }
+                    _ => {}
                 }
-                PageSubheaderType::ColumnAttrs(subheader) => {
-                    column_attrs.extend(subheader.column_attr_vectors());
-                }
-                PageSubheaderType::ColumnFormat(subheader) => {
-                    let format_ref = subheader.format_ref();
-                    let text_subheader = &text_subheaders[format_ref.index];
 
-                    formats.push(text_subheader.text_from_ref(&format_ref).trim().to_string());
-
-                    let label_ref = subheader.label_ref();
-                    let text_subheader = &text_subheaders[label_ref.index];
-
-                    labels.push(text_subheader.text_from_ref(&label_ref).trim().to_string());
-                }
-                _ => {}
-            }
-        }
-
-        Self {
-            row_length,
-            total_row_count,
-            column_count,
-            column_names,
-            column_attrs,
-            formats,
-            labels,
-        }
+                metadata
+            })
     }
 }
 
@@ -774,38 +786,37 @@ impl From<&Metadata> for Schema {
 struct Page<'a> {
     ctx: &'a ParserContext<'a>,
     subheader_pointer_length: usize,
-    subheader_pointers_count: usize,
     align: usize,
     buffer: &'a [u8],
-    header: PageHeader<'a>,
-    page_type: PageType,
+    header: PageHeader,
 }
 
 impl<'a> Page<'a> {
     pub fn new(ctx: &'a ParserContext, buffer: &'a [u8]) -> Self {
         let (align, subheader_pointer_length) = if ctx.is_64_bits { (32, 24) } else { (16, 12) };
         let header = PageHeader::new(ctx, align, &buffer[0..align + 6]);
-        let page_type = header.page_type();
-        let subheader_pointers_count = header.subheader_pointers_count();
 
         Self {
             ctx,
             align,
             subheader_pointer_length,
-            subheader_pointers_count,
             buffer,
             header,
-            page_type,
         }
     }
 
+    pub fn page_type(&self) -> PageType {
+        self.header.page_type
+    }
+
     fn parse_data(&self, metadata: &Metadata) {
-        let rows_count = self.header.data_block_count() - self.subheader_pointers_count;
+        let rows_count = self.header.data_block_count - self.header.subheader_pointers_count;
         let data_buffer = {
-            let offset =
-                self.align + 8 + self.subheader_pointers_count * self.subheader_pointer_length;
-            let offset = offset + (offset % 8);
-            &self.buffer[offset..]
+            let offset = self.align
+                + 8
+                + self.header.subheader_pointers_count * self.subheader_pointer_length;
+            let align_offset = offset + (offset % 8);
+            &self.buffer[align_offset..]
         };
 
         for i in 0..rows_count {
@@ -836,7 +847,7 @@ impl<'a> Page<'a> {
     }
 
     pub fn subheaders(&self) -> Vec<PageSubheader> {
-        (0..self.subheader_pointers_count)
+        (0..self.header.subheader_pointers_count)
             .map(|index| {
                 let pointer_offset = self.align + 8 + index * self.subheader_pointer_length;
                 let pointer_buffer =
@@ -883,7 +894,7 @@ impl<'a> Parser<'a> {
             })
             .collect::<Vec<_>>();
 
-        let metadata = Metadata::new(&pages);
+        let metadata = Metadata::from(&pages);
 
         println!("{:?}", metadata);
 
