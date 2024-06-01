@@ -54,9 +54,19 @@ impl Endianness {
     }
 
     pub fn read_f64(&self, bytes: &[u8]) -> f64 {
-        match self {
-            Self::BigEndian => byteorder::BigEndian::read_f64(bytes),
-            Self::LittleEndian => byteorder::LittleEndian::read_f64(bytes),
+        unsafe {
+            std::mem::transmute(match self {
+                Endianness::BigEndian => {
+                    (0..bytes.len()).fold(0, |value, index| (value << 8) | bytes[index] as u64)
+                        << (8 - bytes.len()) * 8
+                }
+                Endianness::LittleEndian => {
+                    (0..bytes.len())
+                        .rev()
+                        .fold(0, |value, index| (value << 8) | bytes[index] as u64)
+                        << (8 - bytes.len()) * 8
+                }
+            })
         }
     }
 }
@@ -106,7 +116,7 @@ impl TextRef {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 enum PageType {
     Meta,
     Data,
@@ -787,13 +797,15 @@ impl<'a> Page<'a> {
     fn parse_data(&self, metadata: &Metadata) {
         let subheader_pointers_count = self.header.subheader_pointers_count() as usize;
         let data_block_count = self.header.data_block_count() as usize;
-        let data_offset = self.align + 8 + subheader_pointers_count * self.subheader_pointer_length;
-        let dl = data_offset % 8 * 8;
-        let data_rows_offset = data_offset + dl;
         let rows_count = data_block_count - subheader_pointers_count;
-        let data_buffer = &self.buffer[data_rows_offset..];
+        let data_buffer = {
+            let offset = self.align + 8 + subheader_pointers_count * self.subheader_pointer_length;
+            let offset = offset + (offset % 8);
+            &self.buffer[offset..]
+        };
 
         for i in 0..rows_count {
+            print!("ROW {} ", i);
             for column_attr in &metadata.column_attrs {
                 let offset = column_attr.offset as usize + i * metadata.row_length as usize;
                 let width = column_attr.width as usize;
@@ -804,17 +816,18 @@ impl<'a> Page<'a> {
                             .ctx
                             .decoder
                             .decode(&data_buffer[offset..offset + width]);
-                        println!("value {:?}", value.trim());
+                        print!("{:?} ", value.trim());
                     }
                     ColumnType::Numeric => {
                         let value = self
                             .ctx
                             .endianness
                             .read_f64(&data_buffer[offset..offset + width]);
-                        println!("value {:?}", value);
+                        print!("{:?} ", value);
                     }
                 }
             }
+            println!("");
         }
     }
 
@@ -870,11 +883,7 @@ impl<'a> Parser<'a> {
             .collect::<Vec<_>>();
 
         let metadata = Metadata::new(&pages);
-        println!("{:#?}", metadata);
 
-        // for page in pages {
-        //     println!("{:?}", page.page_type);
-        // }
         pages.iter().for_each(|page| page.parse_data(&metadata));
     }
 }
