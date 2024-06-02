@@ -4,6 +4,7 @@ use arrow::datatypes::{DataType, Field, Schema};
 use chrono::{prelude::*, TimeDelta};
 use decoder::Decoder;
 use memmap2::Mmap;
+use rayon::prelude::*;
 use std::borrow::Cow;
 use std::convert::From;
 use std::env;
@@ -325,6 +326,23 @@ impl TryFrom<u8> for Compression {
 }
 
 #[derive(Debug)]
+enum CompressionType {
+    RunLengthEncoding,
+    RossDataCompression,
+    None,
+}
+
+impl From<&str> for CompressionType {
+    fn from(compression_type: &str) -> Self {
+        match compression_type {
+            "SASYZCRL" => Self::RunLengthEncoding,
+            "SASYZCR2" => Self::RossDataCompression,
+            _ => Self::None,
+        }
+    }
+}
+
+#[derive(Debug)]
 struct PageSubheaderPointer {
     offset: usize,
     length: usize,
@@ -363,6 +381,7 @@ impl PageSubheaderPointer {
 struct RowSizeSubheader {
     row_length: usize,
     total_row_count: usize,
+    compression_ref: TextRef,
 }
 
 impl RowSizeSubheader {
@@ -379,9 +398,13 @@ impl RowSizeSubheader {
             )
         };
 
+        let offset = buffer.len() - 118;
+        let compression_ref = TextRef::new(ctx, &buffer[offset..offset + 6]);
+
         Self {
             row_length,
             total_row_count,
+            compression_ref,
         }
     }
 }
@@ -614,6 +637,162 @@ impl<'a> ColumnFormatSubheader<'a> {
 }
 
 #[derive(Debug)]
+enum Command {
+    Copy64,
+    Copy64Plus4096,
+    Copy96,
+    InsertByte18,
+    InsertAt17,
+    InsertBlank17,
+    InsertZero17,
+    Copy1,
+    Copy17,
+    Copy33,
+    Copy49,
+    InsertByte3,
+    InsertAt2,
+    InsertBlank2,
+    InsertZero2,
+}
+
+impl TryFrom<u8> for Command {
+    type Error = &'static str;
+
+    fn try_from(byte: u8) -> Result<Self, Self::Error> {
+        match byte {
+            0x0 => Ok(Self::Copy64),
+            0x1 => Ok(Self::Copy64Plus4096),
+            0x2 => Ok(Self::Copy96),
+            0x4 => Ok(Self::InsertByte18),
+            0x5 => Ok(Self::InsertAt17),
+            0x6 => Ok(Self::InsertBlank17),
+            0x7 => Ok(Self::InsertZero17),
+            0x8 => Ok(Self::Copy1),
+            0x9 => Ok(Self::Copy17),
+            0xA => Ok(Self::Copy33),
+            0xB => Ok(Self::Copy49),
+            0xC => Ok(Self::InsertByte3),
+            0xD => Ok(Self::InsertAt2),
+            0xE => Ok(Self::InsertBlank2),
+            0xF => Ok(Self::InsertZero2),
+            _ => Err("Invalid compression command"),
+        }
+    }
+}
+
+#[derive(Debug)]
+struct CompressedBinaryDataSubheader<'a> {
+    buffer: &'a [u8],
+}
+
+impl<'a> CompressedBinaryDataSubheader<'a> {
+    pub fn new(buffer: &'a [u8]) -> Self {
+        Self { buffer }
+    }
+
+    pub fn decompress(&self, metadata: &Metadata) -> Vec<u8> {
+        match metadata.compression_type {
+            CompressionType::RunLengthEncoding => self.decompress_rle(metadata),
+            CompressionType::RossDataCompression => self.decompress_rdc(metadata),
+            CompressionType::None => Vec::from(self.buffer),
+        }
+    }
+
+    fn decompress_rle(&self, metadata: &Metadata) -> Vec<u8> {
+        let mut bytes: Vec<u8> = vec![0; metadata.row_length];
+        let mut offset = 0;
+        let mut result_offset = 0;
+
+        while offset < self.buffer.len() {
+            let mut copy_length = 0;
+            let mut insert_length = 0;
+            let mut insert_byte = 0;
+
+            let control = self.buffer[offset];
+            let command = ((control & 0xF0) >> 4).try_into().unwrap();
+            let length = usize::from(control & 0x0F);
+
+            offset += 1;
+
+            match command {
+                Command::Copy64 => {
+                    copy_length = usize::from(self.buffer[offset]) + 64 + length * 256;
+                    offset += 1;
+                }
+                Command::Copy64Plus4096 => {
+                    copy_length = usize::from(self.buffer[offset]) + 64 + length * 256 + 4096;
+                    offset += 1;
+                }
+                Command::Copy96 => copy_length = length + 96,
+                Command::InsertByte18 => {
+                    insert_length = usize::from(self.buffer[offset]) + 18 + length * 256;
+                    offset += 1;
+                    insert_byte = self.buffer[offset];
+                    offset += 1;
+                }
+                Command::InsertAt17 => {
+                    insert_length = usize::from(self.buffer[offset]) + 17 + length * 256;
+                    offset += 1;
+                    insert_byte = b'@';
+                }
+                Command::InsertBlank17 => {
+                    insert_length = usize::from(self.buffer[offset]) + 17 + length * 256;
+                    offset += 1;
+                    insert_byte = b' ';
+                }
+                Command::InsertZero17 => {
+                    insert_length = usize::from(self.buffer[offset]) + 17 + length * 256;
+                    offset += 1;
+                    insert_byte = b'\0';
+                }
+                Command::Copy1 => copy_length = length + 1,
+                Command::Copy17 => copy_length = length + 17,
+                Command::Copy33 => copy_length = length + 33,
+                Command::Copy49 => copy_length = length + 49,
+                Command::InsertByte3 => {
+                    insert_byte = self.buffer[offset];
+                    offset += 1;
+                    insert_length = length + 3;
+                }
+                Command::InsertAt2 => {
+                    insert_byte = b'@';
+                    insert_length = length + 2;
+                }
+                Command::InsertBlank2 => {
+                    insert_byte = b' ';
+                    insert_length = length + 2;
+                }
+                Command::InsertZero2 => {
+                    insert_byte = b'\0';
+                    insert_length = length + 2;
+                }
+            }
+
+            if copy_length > 0 {
+                bytes[result_offset..result_offset + copy_length]
+                    .clone_from_slice(&self.buffer[offset..offset + copy_length]);
+
+                offset += copy_length;
+                result_offset += copy_length;
+            }
+
+            if insert_length > 0 {
+                bytes[result_offset..result_offset + insert_length]
+                    .clone_from_slice(&vec![insert_byte; insert_length]);
+
+                result_offset += insert_length;
+            }
+        }
+
+        bytes
+    }
+
+    fn decompress_rdc(&self, _metadata: &Metadata) -> Vec<u8> {
+        Vec::new()
+    }
+}
+
+#[derive(Debug)]
 enum PageSubheaderType<'a> {
     RowSize(RowSizeSubheader),
     ColumnSize(ColumnSizeSubheader),
@@ -623,7 +802,7 @@ enum PageSubheaderType<'a> {
     ColumnAttrs(ColumnAttrsSubheader<'a>),
     ColumnFormat(ColumnFormatSubheader<'a>),
     ColumnList,
-    CompressedBinaryData,
+    CompressedBinaryData(CompressedBinaryDataSubheader<'a>),
 }
 
 #[derive(Debug)]
@@ -634,7 +813,9 @@ struct PageSubheader<'a> {
 impl<'a> PageSubheader<'a> {
     pub fn new(ctx: &'a ParserContext, pointer: &PageSubheaderPointer, buffer: &'a [u8]) -> Self {
         let subheader_type = match pointer.compression {
-            Compression::Compressed => PageSubheaderType::CompressedBinaryData,
+            Compression::Compressed => {
+                PageSubheaderType::CompressedBinaryData(CompressedBinaryDataSubheader::new(&buffer))
+            }
             _ => {
                 let signature = if ctx.is_64_bits {
                     ctx.endianness.read_u64(&buffer[0..8])
@@ -677,6 +858,7 @@ struct Metadata {
     row_length: usize,
     total_row_count: usize,
     column_count: usize,
+    compression_type: CompressionType,
     column_names: Vec<String>,
     column_attrs: Vec<ColumnAttrVector>,
     formats: Vec<String>,
@@ -689,6 +871,7 @@ impl Metadata {
             row_length,
             total_row_count,
             column_count,
+            compression_type: CompressionType::None,
             column_names: Vec::new(),
             column_attrs: Vec::new(),
             formats: Vec::new(),
@@ -721,6 +904,11 @@ impl From<&Vec<Page<'_>>> for Metadata {
                     PageSubheaderType::RowSize(subheader) => {
                         metadata.row_length = subheader.row_length;
                         metadata.total_row_count = subheader.total_row_count;
+                        let text_subheader = &text_subheaders[subheader.compression_ref.index];
+                        metadata.compression_type = text_subheader
+                            .text_from_ref(&subheader.compression_ref)
+                            .as_ref()
+                            .into();
                     }
                     PageSubheaderType::ColumnSize(subheader) => {
                         metadata.column_count = subheader.columns_count;
@@ -810,6 +998,13 @@ impl<'a> Page<'a> {
     }
 
     fn parse_data(&self, metadata: &Metadata) {
+        match metadata.compression_type {
+            CompressionType::None => self.parse_uncompressed_data(metadata),
+            _ => self.parse_compressed_data(metadata),
+        }
+    }
+
+    fn parse_uncompressed_data(&self, metadata: &Metadata) {
         let rows_count = self.header.data_block_count - self.header.subheader_pointers_count;
         let data_buffer = {
             let offset = self.align
@@ -838,6 +1033,38 @@ impl<'a> Page<'a> {
                             .ctx
                             .endianness
                             .read_f64(&data_buffer[offset..offset + width]);
+                        print!("{:?} ", value);
+                    }
+                }
+            }
+            println!("");
+        }
+    }
+
+    fn parse_compressed_data(&self, metadata: &Metadata) {
+        let uncompressed_data = self
+            .subheaders()
+            .par_iter()
+            .filter_map(|subheader| match &subheader.subheader_type {
+                PageSubheaderType::CompressedBinaryData(subheader) => Some(subheader),
+                _ => None,
+            })
+            .map(|subheader| subheader.decompress(metadata))
+            .collect::<Vec<_>>();
+
+        for (i, data) in uncompressed_data.iter().enumerate() {
+            print!("ROW {} ", i);
+            for column_attr in &metadata.column_attrs {
+                let offset = column_attr.offset;
+                let width = column_attr.width;
+
+                match column_attr.column_type {
+                    ColumnType::Character => {
+                        let value = self.ctx.decoder.decode(&data[offset..offset + width]);
+                        print!("{:?} ", value.trim());
+                    }
+                    ColumnType::Numeric => {
+                        let value = self.ctx.endianness.read_f64(&data[offset..offset + width]);
                         print!("{:?} ", value);
                     }
                 }
