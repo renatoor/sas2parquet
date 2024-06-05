@@ -787,8 +787,94 @@ impl<'a> CompressedBinaryDataSubheader<'a> {
         bytes
     }
 
-    fn decompress_rdc(&self, _metadata: &Metadata) -> Vec<u8> {
-        Vec::new()
+    // https://web.archive.org/web/20150409042848/http://collaboration.cmc.ec.gc.ca/science/rpn/biblio/ddj/Website/articles/CUJ/1992/9210/ross/list2.htm
+    fn decompress_rdc(&self, metadata: &Metadata) -> Vec<u8> {
+        let mut bytes: Vec<u8> = vec![0; metadata.row_length];
+        let mut offset = 0;
+        let mut result_offset = 0;
+
+        let mut control_bits = 0;
+        let mut control_mask = 0;
+
+        while offset < self.buffer.len() {
+            control_mask = control_mask >> 1;
+
+            if control_mask == 0 {
+                control_bits =
+                    (u16::from(self.buffer[offset]) << 8) + u16::from(self.buffer[offset + 1]);
+                offset += 2;
+                control_mask = 0x8000;
+            }
+
+            if (control_bits & control_mask) == 0 {
+                bytes[result_offset] = self.buffer[offset];
+                result_offset += 1;
+                offset += 1;
+                continue;
+            }
+
+            let cmd = usize::from((self.buffer[offset] >> 4) & 0x0F);
+            let mut cnt = usize::from(self.buffer[offset] & 0x0F);
+            offset += 1;
+
+            match cmd {
+                0 => {
+                    cnt += 3;
+
+                    bytes[result_offset..result_offset + cnt].clone_from_slice(&vec![
+                        self.buffer
+                            [offset];
+                        cnt
+                    ]);
+
+                    result_offset += cnt;
+                    offset += 1;
+                }
+                1 => {
+                    cnt += usize::from(u16::from(self.buffer[offset]) << 4);
+                    cnt += 19;
+                    offset += 1;
+
+                    bytes[result_offset..result_offset + cnt].clone_from_slice(&vec![
+                        self.buffer
+                            [offset];
+                        cnt
+                    ]);
+
+                    result_offset += cnt;
+                    offset += 1;
+                }
+                2 => {
+                    let mut ofs = cnt + 3;
+                    ofs += usize::from(u16::from(self.buffer[offset]) << 4);
+                    offset += 1;
+                    cnt = usize::from(self.buffer[offset]);
+                    offset += 1;
+                    cnt += 16;
+
+                    bytes.copy_within(
+                        result_offset - ofs..result_offset - ofs + cnt,
+                        result_offset,
+                    );
+
+                    result_offset += cnt;
+                }
+                _ => {
+                    let mut ofs = cnt + 3;
+                    ofs += usize::from(u16::from(self.buffer[offset]) << 4);
+                    offset += 1;
+
+                    bytes.copy_within(
+                        result_offset - ofs..result_offset - ofs + cmd,
+                        result_offset,
+                    );
+
+                    result_offset += cmd;
+                }
+            }
+        }
+
+        bytes
     }
 }
 
@@ -902,9 +988,10 @@ impl From<&Vec<Page<'_>>> for Metadata {
             .fold(Metadata::new(0, 0, 0), |mut metadata, subheader| {
                 match &subheader.subheader_type {
                     PageSubheaderType::RowSize(subheader) => {
+                        let text_subheader = text_subheaders[subheader.compression_ref.index];
+
                         metadata.row_length = subheader.row_length;
                         metadata.total_row_count = subheader.total_row_count;
-                        let text_subheader = &text_subheaders[subheader.compression_ref.index];
                         metadata.compression_type = text_subheader
                             .text_from_ref(&subheader.compression_ref)
                             .as_ref()
@@ -916,6 +1003,7 @@ impl From<&Vec<Page<'_>>> for Metadata {
                     PageSubheaderType::ColumnName(subheader) => {
                         for column_name_pointer in subheader.column_name_pointers() {
                             let text_subheader = &text_subheaders[column_name_pointer.index];
+
                             metadata.column_names.push(
                                 text_subheader
                                     .text_from_ref(&column_name_pointer)
@@ -977,6 +1065,7 @@ struct Page<'a> {
     align: usize,
     buffer: &'a [u8],
     header: PageHeader,
+    page_subheaders: Option<Vec<PageSubheader<'a>>>,
 }
 
 impl<'a> Page<'a> {
@@ -990,6 +1079,7 @@ impl<'a> Page<'a> {
             subheader_pointer_length,
             buffer,
             header,
+            page_subheaders: None,
         }
     }
 
@@ -998,9 +1088,11 @@ impl<'a> Page<'a> {
     }
 
     fn parse_data(&self, metadata: &Metadata) {
-        match metadata.compression_type {
-            CompressionType::None => self.parse_uncompressed_data(metadata),
-            _ => self.parse_compressed_data(metadata),
+        if self.page_type() != PageType::Comp {
+            match metadata.compression_type {
+                CompressionType::None => self.parse_uncompressed_data(metadata),
+                _ => self.parse_compressed_data(metadata),
+            }
         }
     }
 
@@ -1112,7 +1204,7 @@ impl<'a> Parser<'a> {
         let decoder = header.decoder();
         let ctx = ParserContext::new(is_64_bits, endianness, decoder);
 
-        println!("{:?}", ctx);
+        //println!("{:?}", ctx);
 
         let pages = (0..header.page_count())
             .map(|index| {
