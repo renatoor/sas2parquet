@@ -26,8 +26,9 @@ use std::sync::Arc;
 const SAS_EPOCH_OFFSET_DAYS: f64 = 3653.0;
 const SAS_EPOCH_OFFSET_SECONDS: f64 = SAS_EPOCH_OFFSET_DAYS * 86_400.0;
 
-/// Batches are also cut by size so that very wide rows do not make huge batches.
-const MAX_BATCH_BYTES: usize = 256 << 20;
+/// Batches are also cut by size, so wide rows still give the writer several batches
+/// per row group to decode in parallel.
+const MAX_BATCH_BYTES: usize = 16 << 20;
 
 #[derive(Debug, Clone)]
 pub struct ReadOptions {
@@ -134,6 +135,14 @@ impl<'a> SasReader<'a> {
 
     pub fn num_batches(&self) -> usize {
         self.batches.len()
+    }
+
+    /// Number of rows batch `index` will decode to.
+    pub fn batch_row_count(&self, index: usize) -> usize {
+        self.plan[self.batches[index].clone()]
+            .iter()
+            .map(PageRows::len)
+            .sum()
     }
 
     /// Decodes batch `index`. Batches are independent, so this can run on many threads.
