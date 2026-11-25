@@ -6,6 +6,10 @@
 
 use crate::error::{Error, Result};
 
+/// Upper bound on output bytes per input byte for either scheme. The most expansive
+/// command is RLE's 2-byte "insert 17+ blanks/zeros/@" run, which emits up to 4112 bytes.
+pub const MAX_EXPANSION: usize = 2056;
+
 #[inline]
 fn byte(input: &[u8], pos: &mut usize) -> Result<u8> {
     let b = *input

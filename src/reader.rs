@@ -16,9 +16,7 @@ use crate::header::Header;
 use crate::metadata::{self, Column, Compression, Metadata, ValueType, is_row_subheader};
 use crate::page::{Page, PageType, SubheaderPointer};
 use arrow_array::builder::StringBuilder;
-use arrow_array::{
-    ArrayRef, Date32Array, Float64Array, RecordBatch, RecordBatchOptions, TimestampMillisecondArray,
-};
+use arrow_array::{ArrayRef, Date32Array, Float64Array, RecordBatch, TimestampMillisecondArray};
 use arrow_schema::{DataType, Field, Schema, SchemaRef, TimeUnit};
 use std::collections::HashMap;
 use std::ops::Range;
@@ -27,6 +25,9 @@ use std::sync::Arc;
 /// Days between the SAS epoch (1960-01-01) and the Unix epoch (1970-01-01).
 const SAS_EPOCH_OFFSET_DAYS: f64 = 3653.0;
 const SAS_EPOCH_OFFSET_SECONDS: f64 = SAS_EPOCH_OFFSET_DAYS * 86_400.0;
+
+/// Batches are also cut by size so that very wide rows do not make huge batches.
+const MAX_BATCH_BYTES: usize = 256 << 20;
 
 #[derive(Debug, Clone)]
 pub struct ReadOptions {
@@ -87,13 +88,17 @@ impl<'a> SasReader<'a> {
         let decoder = TextDecoder::new(header.encoding_code, options.encoding.as_deref())?;
         let pages = (0..header.page_count).map(|i| Page::parse(layout, i, header.page(data, i)));
         let metadata = metadata::parse(layout, pages, &decoder)?;
-        if metadata.row_length == 0 && !metadata.columns.is_empty() {
-            return Err(Error::Metadata("row length is zero".into()));
-        }
+        check_row_length(&header, &metadata)?;
 
         let schema = Arc::new(build_schema(&header, &decoder, &metadata));
-        let plan = build_plan(data, &header, &metadata)?;
-        let batches = group_batches(&plan, options.batch_rows.max(1));
+        // Parquet (and Arrow IPC) cannot represent rows without columns, so a dataset
+        // with no variables reads as empty, whatever row count it declares.
+        let plan = if metadata.columns.is_empty() {
+            Vec::new()
+        } else {
+            build_plan(data, &header, &metadata)?
+        };
+        let batches = group_batches(&plan, options.batch_rows.max(1), metadata.row_length);
 
         Ok(Self {
             data,
@@ -135,15 +140,6 @@ impl<'a> SasReader<'a> {
     pub fn read_batch(&self, index: usize) -> Result<RecordBatch> {
         let entries = &self.plan[self.batches[index].clone()];
         let row_count: usize = entries.iter().map(PageRows::len).sum();
-
-        if self.metadata.columns.is_empty() {
-            let options = RecordBatchOptions::new().with_row_count(Some(row_count));
-            return Ok(RecordBatch::try_new_with_options(
-                self.schema.clone(),
-                vec![],
-                &options,
-            )?);
-        }
 
         let arena = self.decompress_rows(entries)?;
         let rows = self.row_slices(entries, &arena, row_count);
@@ -297,6 +293,27 @@ fn build_schema(header: &Header, decoder: &TextDecoder, metadata: &Metadata) -> 
     Schema::new_with_metadata(fields, schema_metadata)
 }
 
+/// Rejects row lengths that no valid file could have, before anything is allocated from them.
+fn check_row_length(header: &Header, metadata: &Metadata) -> Result<()> {
+    let row_length = metadata.row_length;
+    if metadata.columns.is_empty() {
+        return Ok(());
+    }
+    let limit = match metadata.compression {
+        // Uncompressed rows never span pages.
+        Compression::None => header.page_len,
+        // A compressed row lives in a single subheader, so it cannot expand past this.
+        _ => header.page_len.saturating_mul(decompress::MAX_EXPANSION),
+    };
+    if row_length == 0 || row_length > limit {
+        return Err(Error::Metadata(format!(
+            "row length {row_length} is invalid for {} byte pages",
+            header.page_len
+        )));
+    }
+    Ok(())
+}
+
 fn build_plan(data: &[u8], header: &Header, metadata: &Metadata) -> Result<Vec<PageRows>> {
     let layout = header.layout;
     let row_length = metadata.row_length;
@@ -316,6 +333,13 @@ fn build_plan(data: &[u8], header: &Header, metadata: &Metadata) -> Result<Vec<P
                 for pointer in page.pointers(layout) {
                     let pointer = pointer?;
                     if is_row_subheader(layout, &pointer, page.subheader(&pointer))? {
+                        if pointer.len < row_length
+                            && row_length > pointer.len.saturating_mul(decompress::MAX_EXPANSION)
+                        {
+                            return Err(Error::Decompress(
+                                "row is too small to expand to the declared row length",
+                            ));
+                        }
                         pointers.push(pointer);
                     }
                 }
@@ -364,13 +388,14 @@ fn build_plan(data: &[u8], header: &Header, metadata: &Metadata) -> Result<Vec<P
     Ok(plan)
 }
 
-/// Groups consecutive pages into batches of at least `target` rows (except the last).
-fn group_batches(plan: &[PageRows], target: usize) -> Vec<Range<usize>> {
+/// Groups consecutive pages into batches of about `target` rows (cut at page boundaries),
+/// or fewer when rows are wide enough to reach `MAX_BATCH_BYTES` first.
+fn group_batches(plan: &[PageRows], target: usize, row_length: usize) -> Vec<Range<usize>> {
     let mut batches = Vec::new();
     let (mut start, mut rows) = (0, 0);
     for (i, entry) in plan.iter().enumerate() {
         rows += entry.len();
-        if rows >= target {
+        if rows >= target || rows.saturating_mul(row_length) >= MAX_BATCH_BYTES {
             batches.push(start..i + 1);
             start = i + 1;
             rows = 0;

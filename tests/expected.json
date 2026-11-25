@@ -1,0 +1,10821 @@
+{
+ "Final_Candy": {
+  "rows": 75,
+  "columns": {
+   "Name": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 906,
+    "first": "Snickers Peanut Butter",
+    "last": "Big Hunk"
+   },
+   "Brand": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 553,
+    "first": "M&M/Mars",
+    "last": "Annabelle"
+   },
+   "Servings": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 99.0
+   },
+   "Weight": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 164.21
+   },
+   "Weight1": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 130.61428571428573
+   },
+   "Calories": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 18227.0
+   },
+   "TotalFat": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 890.5
+   },
+   "SatFat": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 462.5
+   },
+   "Cholesterol": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 396.0
+   },
+   "Sodium": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5785.0
+   },
+   "Carbohydrate": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2318.0
+   },
+   "Sugars": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 1769.0
+   },
+   "Fiber": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 80.0
+   },
+   "Protein": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 266.0
+   },
+   "VitaminA": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 38.0
+   },
+   "VitaminC": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61.0
+   },
+   "Calcium": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 363.0
+   },
+   "Iron": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 213.0
+   }
+  }
+ },
+ "airline": {
+  "rows": 32,
+  "columns": {
+   "YEAR": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 62832.0
+   },
+   "Y": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 321.6060017347336
+   },
+   "W": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 22.12300005555153
+   },
+   "R": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 11.357800051569939
+   },
+   "L": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 121.38799953460693
+   },
+   "K": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 119.56100171804428
+   }
+  }
+ },
+ "barrows": {
+  "rows": 1000,
+  "columns": {
+   "X1": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 501.1225401817355
+   },
+   "X2": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 486.0015110166277
+   },
+   "X3": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.1815498324576
+   },
+   "X4": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 514.8700206107459
+   },
+   "X5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 514.9670101490336
+   },
+   "X6": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 494.2462512860074
+   },
+   "X7": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 494.24570429697627
+   },
+   "X8": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 497.94823798583815
+   },
+   "X9": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 497.85602118889796
+   },
+   "X10": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 508.97166450065555
+   },
+   "X11": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 489.89084787853056
+   },
+   "X12": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 507.23590267007233
+   },
+   "X13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 511.2171219734009
+   },
+   "X14": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 517.4121380676514
+   },
+   "X15": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 500.14302181592205
+   },
+   "X16": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 501.6192731619812
+   },
+   "X17": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 518.3484276614616
+   },
+   "X18": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 503.49327351851383
+   },
+   "X19": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 505.7381355913821
+   },
+   "X20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 497.74405852030026
+   },
+   "X21": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 491.943398296833
+   },
+   "X22": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 483.6119749026838
+   },
+   "X23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 486.7495604192372
+   },
+   "X24": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 495.00190901849413
+   },
+   "X25": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 501.13381648459466
+   },
+   "X26": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 513.5406210834625
+   },
+   "X27": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 514.7257010855245
+   },
+   "X28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 507.5087215348612
+   },
+   "X29": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 519.8143765942658
+   },
+   "X30": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 487.23115709656844
+   },
+   "X31": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 497.338902009651
+   },
+   "X32": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 502.4596149125136
+   },
+   "X33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 498.7150239120237
+   },
+   "X34": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 497.85827911994414
+   },
+   "X35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 503.58136855135666
+   },
+   "X36": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 510.6301761842332
+   },
+   "X37": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 489.17179373092944
+   },
+   "X38": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 495.78533766535105
+   },
+   "X39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 515.0046920513267
+   },
+   "X40": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 496.7962736906483
+   },
+   "X41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 508.2323209708556
+   },
+   "X42": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 489.5503815442789
+   },
+   "X43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 498.51707252045156
+   },
+   "X44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 489.6037656059488
+   },
+   "X45": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 497.68135294341477
+   },
+   "X46": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 506.3501695937011
+   },
+   "X47": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 491.97752447822126
+   },
+   "X48": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 494.05470219929697
+   },
+   "X49": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 506.35122394654894
+   },
+   "X50": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 508.2694638525135
+   },
+   "X51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 515.493846717989
+   },
+   "X52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 497.52028055535624
+   },
+   "X53": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 492.91406572912814
+   },
+   "X54": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.67750152572984
+   },
+   "X55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 510.8309592895675
+   },
+   "X56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 509.00120403757313
+   },
+   "X57": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 506.6707007226068
+   },
+   "X58": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 484.7914749423507
+   },
+   "X59": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 507.17702996009024
+   },
+   "X60": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 498.5326982350088
+   },
+   "X61": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 495.908699855674
+   },
+   "X62": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 489.56846123374993
+   },
+   "X63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 506.8271803034003
+   },
+   "X64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.6306413833517
+   },
+   "X65": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 508.9307116987183
+   },
+   "X66": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 509.4710702884476
+   },
+   "X67": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 506.09518424421543
+   },
+   "X68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 498.23927819263184
+   },
+   "X69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 489.0574579329695
+   },
+   "X70": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 506.510059232125
+   },
+   "I": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 500500.0
+   },
+   "J": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 71000.0
+   }
+  }
+ },
+ "binary": {
+  "rows": 100,
+  "columns": {
+   "I": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5050.0
+   },
+   "I1": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5050.0
+   },
+   "I2": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 100.0
+   },
+   "I3": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5050.0
+   },
+   "I4": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5050.0
+   },
+   "I5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5050.0
+   },
+   "I6": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5050.0
+   },
+   "I7": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5050.0
+   },
+   "I8": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5050.0
+   },
+   "I9": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5050.0
+   },
+   "CHAR": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 1400,
+    "first": "           1xy",
+    "last": "         100xy"
+   }
+  }
+ },
+ "cp950": {
+  "rows": 1,
+  "columns": {
+   "VAR1": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 3,
+    "first": "我愛你",
+    "last": "我愛你"
+   }
+  }
+ },
+ "datetime": {
+  "rows": 5,
+  "columns": {
+   "desc": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 19,
+    "first": "one",
+    "last": "five"
+   },
+   "mtg": {
+    "type": "date32[day]",
+    "nulls": 1,
+    "sum": 69968.0
+   },
+   "dt": {
+    "type": "timestamp[ms]",
+    "nulls": 3,
+    "sum": 3043750833000.0
+   },
+   "tm": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 93556.0
+   }
+  }
+ },
+ "extr": {
+  "rows": 56,
+  "columns": {
+   "AETXT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 139,
+    "first": "眠気",
+    "last": "眠気"
+   }
+  }
+ },
+ "homimp": {
+  "rows": 46641,
+  "columns": {
+   "RAS": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 93282,
+    "first": "42",
+    "last": "61"
+   },
+   "RAH": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 46641,
+    "first": "2",
+    "last": "1"
+   },
+   "RAD": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 156739164.0
+   },
+   "JRAS": {
+    "type": "string",
+    "nulls": 46639,
+    "chars": 2,
+    "first": "1",
+    "last": "1"
+   },
+   "JRAD": {
+    "type": "string",
+    "nulls": 38317,
+    "chars": 8324,
+    "first": "9",
+    "last": "9"
+   },
+   "CONTROL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 559692,
+    "first": "129724930113",
+    "last": "699726920244"
+   }
+  }
+ },
+ "ietest2": {
+  "rows": 1,
+  "columns": {
+   "IETEST": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 45,
+    "first": "Written informed consent for study participat",
+    "last": "Written informed consent for study participat"
+   }
+  }
+ },
+ "numeric_1000000_2": {
+  "rows": 1000000,
+  "columns": {
+   "x": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499893.91959882056
+   },
+   "f": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499595.0
+   }
+  }
+ },
+ "omov": {
+  "rows": 2351,
+  "columns": {
+   "DBOUTREAS": {
+    "type": "double",
+    "nulls": 25,
+    "sum": 10783.0
+   },
+   "DBOUTLEN": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 2351,
+    "first": "4",
+    "last": "5"
+   },
+   "DBOUTVOL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 2351,
+    "first": "1",
+    "last": "2"
+   },
+   "DBOUTWHER": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 2351,
+    "first": "1",
+    "last": "1"
+   },
+   "DBOUTWHY": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 2351,
+    "first": "1",
+    "last": "1"
+   },
+   "DBUGROUP": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2585.0
+   },
+   "DBGRPCNT": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2799.0
+   },
+   "CONTROL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 28212,
+    "first": "599754960148",
+    "last": "999900020154"
+   }
+  }
+ },
+ "owner": {
+  "rows": 27570,
+  "columns": {
+   "OWNHERE": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 27570,
+    "first": "B",
+    "last": "2"
+   },
+   "JWNHER": {
+    "type": "string",
+    "nulls": 25583,
+    "chars": 1987,
+    "first": "2",
+    "last": "2"
+   },
+   "CONTROL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 330840,
+    "first": "999900021877",
+    "last": "730726140141"
+   }
+  }
+ },
+ "pooltest255": {
+  "rows": 255,
+  "columns": {
+   "col1": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 657,
+    "first": "1",
+    "last": "255"
+   }
+  }
+ },
+ "productsales": {
+  "rows": 1440,
+  "columns": {
+   "ACTUAL": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 730337.0
+   },
+   "PREDICT": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 706295.0
+   },
+   "COUNTRY": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 9120,
+    "first": "CANADA",
+    "last": "U.S.A."
+   },
+   "REGION": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 5760,
+    "first": "EAST",
+    "last": "WEST"
+   },
+   "DIVISION": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 12240,
+    "first": "EDUCATION",
+    "last": "CONSUMER"
+   },
+   "PRODTYPE": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 10368,
+    "first": "FURNITURE",
+    "last": "OFFICE"
+   },
+   "PRODUCT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 6048,
+    "first": "SOFA",
+    "last": "DESK"
+   },
+   "QUARTER": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3600.0
+   },
+   "YEAR": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2870640.0
+   },
+   "MONTH": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12600000.0
+   }
+  }
+ },
+ "ratiov": {
+  "rows": 3970,
+  "columns": {
+   "ROTHE": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 3969,
+    "first": "2",
+    "last": "2"
+   },
+   "RGROC": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 3969,
+    "first": "2",
+    "last": "2"
+   },
+   "RCLOT": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 3969,
+    "first": "2",
+    "last": "2"
+   },
+   "RCARP": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 3969,
+    "first": "2",
+    "last": "2"
+   },
+   "RKIDC": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 3969,
+    "first": "2",
+    "last": "2"
+   },
+   "RMEDI": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 3969,
+    "first": "2",
+    "last": "2"
+   },
+   "RUTIL": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 3969,
+    "first": "2",
+    "last": "2"
+   },
+   "RCOST": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 3969,
+    "first": "2",
+    "last": "2"
+   },
+   "CONTROL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 47640,
+    "first": "999900021026",
+    "last": "999900020152"
+   }
+  }
+ },
+ "rmov": {
+  "rows": 17678,
+  "columns": {
+   "DBINREAS": {
+    "type": "double",
+    "nulls": 444,
+    "sum": 83290.0
+   },
+   "XPER": {
+    "type": "double",
+    "nulls": 1404,
+    "sum": 48683.0
+   },
+   "DBINWHER": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 17678,
+    "first": "1",
+    "last": "1"
+   },
+   "DBINWHY": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 17678,
+    "first": "2",
+    "last": "2"
+   },
+   "DBINVOL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 17678,
+    "first": "2",
+    "last": "2"
+   },
+   "XCOND": {
+    "type": "string",
+    "nulls": 816,
+    "chars": 16862,
+    "first": "3",
+    "last": "3"
+   },
+   "XCOOP": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 17678,
+    "first": "B",
+    "last": "B"
+   },
+   "XCOST": {
+    "type": "string",
+    "nulls": 823,
+    "chars": 16855,
+    "first": "3",
+    "last": "2"
+   },
+   "XHEAD": {
+    "type": "string",
+    "nulls": 538,
+    "chars": 17140,
+    "first": "2",
+    "last": "1"
+   },
+   "XREL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 17678,
+    "first": "2",
+    "last": "B"
+   },
+   "XTEN": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 17678,
+    "first": "1",
+    "last": "2"
+   },
+   "XUNIT": {
+    "type": "string",
+    "nulls": 579,
+    "chars": 17099,
+    "first": "1",
+    "last": "2"
+   },
+   "MVG": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 17678,
+    "first": "1",
+    "last": "1"
+   },
+   "JOVGRP": {
+    "type": "string",
+    "nulls": 16868,
+    "chars": 810,
+    "first": "1",
+    "last": "1"
+   },
+   "JXTEN": {
+    "type": "string",
+    "nulls": 16496,
+    "chars": 1182,
+    "first": "1",
+    "last": "1"
+   },
+   "JXUNIT": {
+    "type": "string",
+    "nulls": 17348,
+    "chars": 330,
+    "first": "1",
+    "last": "1"
+   },
+   "JXPER": {
+    "type": "string",
+    "nulls": 15779,
+    "chars": 1899,
+    "first": "1",
+    "last": "1"
+   },
+   "JXHEAD": {
+    "type": "string",
+    "nulls": 14113,
+    "chars": 3565,
+    "first": "1",
+    "last": "1"
+   },
+   "JDBINWHY": {
+    "type": "string",
+    "nulls": 16545,
+    "chars": 1133,
+    "first": "2",
+    "last": "2"
+   },
+   "JDBINVOL": {
+    "type": "string",
+    "nulls": 16543,
+    "chars": 1135,
+    "first": "2",
+    "last": "2"
+   },
+   "JDBINREAS": {
+    "type": "string",
+    "nulls": 16539,
+    "chars": 1139,
+    "first": "2",
+    "last": "2"
+   },
+   "JDBINWHER": {
+    "type": "string",
+    "nulls": 16538,
+    "chars": 1140,
+    "first": "2",
+    "last": "2"
+   },
+   "CONTROL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 212136,
+    "first": "999900021877",
+    "last": "730726140141"
+   }
+  }
+ },
+ "test1": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test10": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test11": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test12": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test13": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test14": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test15": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test16": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 90,
+    "first": "é«˜é›„å¸‚",
+    "last": "é«˜é›„å¸‚"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 78,
+    "first": "ë¶€ì‚°",
+    "last": "ë¶€ì‚°"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 68,
+    "first": "ë¶€ì‚°",
+    "last": "é«˜é›„å¸‚"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 93,
+    "first": "Ð˜Ñ€ÐºÑƒÑ‚ÑÐº",
+    "last": "Ð˜Ñ€ÐºÑƒÑ‚ÑÐº"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 83,
+    "first": "é±·é­š",
+    "last": "é«˜é›„å¸‚"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 75,
+    "first": "é±·é­š",
+    "last": "Ð˜Ñ€ÐºÑƒÑ‚ÑÐº"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 68,
+    "first": "é±·é­š",
+    "last": "é±·é­š"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 101,
+    "first": "é±·é­š",
+    "last": "Ð˜Ñ€ÐºÑƒÑ‚ÑÐº"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 64,
+    "first": "é±·é­š",
+    "last": "Ð˜Ñ€ÐºÑƒÑ‚ÑÐº"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 95,
+    "first": "Ð˜Ñ€ÐºÑƒÑ‚ÑÐº",
+    "last": "ë¶€ì‚°"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 73,
+    "first": "é«˜é›„å¸‚",
+    "last": "ë¶€ì‚°"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 79,
+    "first": "Ð˜Ñ€ÐºÑƒÑ‚ÑÐº",
+    "last": "é±·é­š"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 72,
+    "first": "é±·é­š",
+    "last": "ë¶€ì‚°"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 84,
+    "first": "Ð˜Ñ€ÐºÑƒÑ‚ÑÐº",
+    "last": "é±·é­š"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 73,
+    "first": "ë¶€ì‚°",
+    "last": "é±·é­š"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 95,
+    "first": "é±·é­š",
+    "last": "é«˜é›„å¸‚"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 84,
+    "first": "ë¶€ì‚°",
+    "last": "é±·é­š"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 88,
+    "first": "Ð˜Ñ€ÐºÑƒÑ‚ÑÐº",
+    "last": "Ð˜Ñ€ÐºÑƒÑ‚ÑÐº"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 92,
+    "first": "é±·é­š",
+    "last": "Ð˜Ñ€ÐºÑƒÑ‚ÑÐº"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 73,
+    "first": "ë¶€ì‚°",
+    "last": "é«˜é›„å¸‚"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 72,
+    "first": "é±·é­š",
+    "last": "Ð˜Ñ€ÐºÑƒÑ‚ÑÐº"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 73,
+    "first": "ë¶€ì‚°",
+    "last": "ë¶€ì‚°"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 74,
+    "first": "é«˜é›„å¸‚",
+    "last": "é«˜é›„å¸‚"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 58,
+    "first": "ë¶€ì‚°",
+    "last": "é«˜é›„å¸‚"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 71,
+    "first": "ë¶€ì‚°",
+    "last": "é±·é­š"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test2": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test3": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test4": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test5": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test6": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test7": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test8": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "test9": {
+  "rows": 10,
+  "columns": {
+   "Column1": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.987
+   },
+   "Column2": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column3": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 354.0
+   },
+   "Column4": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 18042.0
+   },
+   "Column5": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 3.133
+   },
+   "Column6": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 48,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column7": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 342.0
+   },
+   "Column8": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 32476.0
+   },
+   "Column9": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.485
+   },
+   "Column10": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 53,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column11": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 126.0
+   },
+   "Column12": {
+    "type": "date32[day]",
+    "nulls": 0,
+    "sum": 12962.0
+   },
+   "Column13": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 5.798
+   },
+   "Column14": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 34,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column15": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 423.0
+   },
+   "Column16": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27292.0
+   },
+   "Column17": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.960999999999999
+   },
+   "Column18": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column19": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 389.0
+   },
+   "Column20": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46640.0
+   },
+   "Column21": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 3.08
+   },
+   "Column22": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 45,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column23": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 626.0
+   },
+   "Column24": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 27583.0
+   },
+   "Column25": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.0120000000000005
+   },
+   "Column26": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 76,
+    "first": "crocodile",
+    "last": "crocodile"
+   },
+   "Column27": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 408.0
+   },
+   "Column28": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 61265.0
+   },
+   "Column29": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.393
+   },
+   "Column30": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column31": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 516.0
+   },
+   "Column32": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 30357.0
+   },
+   "Column33": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 2.877
+   },
+   "Column34": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 41,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column35": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 464.0
+   },
+   "Column36": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 59408.0
+   },
+   "Column37": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.288
+   },
+   "Column38": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 49,
+    "first": "dog",
+    "last": "apple"
+   },
+   "Column39": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 380.0
+   },
+   "Column40": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 28387.0
+   },
+   "Column41": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.537
+   },
+   "Column42": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 33,
+    "first": "pear",
+    "last": "apple"
+   },
+   "Column43": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 478.0
+   },
+   "Column44": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 46873.0
+   },
+   "Column45": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.343
+   },
+   "Column46": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column47": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 418.0
+   },
+   "Column48": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 27874.0
+   },
+   "Column49": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 4.24
+   },
+   "Column50": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 31,
+    "first": "crocodile",
+    "last": "apple"
+   },
+   "Column51": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 561.0
+   },
+   "Column52": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55955.0
+   },
+   "Column53": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.656
+   },
+   "Column54": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 49,
+    "first": "dog",
+    "last": "crocodile"
+   },
+   "Column55": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 476.0
+   },
+   "Column56": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 41114.0
+   },
+   "Column57": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 3.107
+   },
+   "Column58": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 48,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column59": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 385.0
+   },
+   "Column60": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 61911.0
+   },
+   "Column61": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.672
+   },
+   "Column62": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 42,
+    "first": "crocodile",
+    "last": "pear"
+   },
+   "Column63": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 499.0
+   },
+   "Column64": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 51961.0
+   },
+   "Column65": {
+    "type": "double",
+    "nulls": 4,
+    "sum": 3.805
+   },
+   "Column66": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 41,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column67": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 464.0
+   },
+   "Column68": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 55565.0
+   },
+   "Column69": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.466
+   },
+   "Column70": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 30,
+    "first": "dog",
+    "last": "dog"
+   },
+   "Column71": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 313.0
+   },
+   "Column72": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 35000.0
+   },
+   "Column73": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 3.894
+   },
+   "Column74": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 43,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column75": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 521.0
+   },
+   "Column76": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 46028.0
+   },
+   "Column77": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 4.043
+   },
+   "Column78": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 41,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column79": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 262.0
+   },
+   "Column80": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 42565.0
+   },
+   "Column81": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.361
+   },
+   "Column82": {
+    "type": "string",
+    "nulls": 2,
+    "chars": 38,
+    "first": "crocodile",
+    "last": "dog"
+   },
+   "Column83": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 452.0
+   },
+   "Column84": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 30135.0
+   },
+   "Column85": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.89
+   },
+   "Column86": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 44,
+    "first": "apple",
+    "last": "apple"
+   },
+   "Column87": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 526.0
+   },
+   "Column88": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 44626.0
+   },
+   "Column89": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.785
+   },
+   "Column90": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 47,
+    "first": "pear",
+    "last": "pear"
+   },
+   "Column91": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 537.0
+   },
+   "Column92": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 44167.0
+   },
+   "Column93": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.404
+   },
+   "Column94": {
+    "type": "string",
+    "nulls": 4,
+    "chars": 24,
+    "first": "apple",
+    "last": "pear"
+   },
+   "Column95": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 500.0
+   },
+   "Column96": {
+    "type": "double",
+    "nulls": 3,
+    "sum": 42744.0
+   },
+   "Column97": {
+    "type": "double",
+    "nulls": 1,
+    "sum": 5.051
+   },
+   "Column98": {
+    "type": "string",
+    "nulls": 1,
+    "chars": 56,
+    "first": "apple",
+    "last": "crocodile"
+   },
+   "Column99": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 544.0
+   },
+   "Column100": {
+    "type": "double",
+    "nulls": 2,
+    "sum": 35083.0
+   }
+  }
+ },
+ "testbig5": {
+  "rows": 1,
+  "columns": {
+   "VAR1": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 6,
+    "first": "§Ú·R§A",
+    "last": "§Ú·R§A"
+   }
+  }
+ },
+ "topical": {
+  "rows": 84355,
+  "columns": {
+   "CONTROL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 1012260,
+    "first": "100003130103",
+    "last": "999900056786"
+   },
+   "EABAN": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "EBARCL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "EJUNK": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "EAGE": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "DPALTCOM": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "DPBNREAD": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "1",
+    "last": "1"
+   },
+   "DPDRFOOD": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "1",
+    "last": "1"
+   },
+   "CEFCLOSKNIT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFDISRSPCT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFFIGHTING": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFFIRESTA": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "FRIENDS": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFGETALONG": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFGPBLOCK": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFGPCHURCH": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFGPCIVIC": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFHELPNBOR": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFSHARVALS": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFSKIPSCHL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFSPKMEETG": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFSPKNBORS": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFSPKOFFCL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFSPKPRBLM": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFSPKRELG": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFSPRYPNT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "TALKNBOR": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "CEFTRUSTED": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "VOLNTEER": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "ECOM1": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "ECOM2": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "EGREEN": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "EHEIGHT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "EPRKG": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "EROAD": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "ETRANS": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "EWATER": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "SATPOL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WFPROP": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTCOSTGAS": {
+    "type": "double",
+    "nulls": 57024,
+    "sum": 5864290.0
+   },
+   "PTCOSTINSU": {
+    "type": "double",
+    "nulls": 58673,
+    "sum": 4251818.0
+   },
+   "PTCOSTCARP": {
+    "type": "double",
+    "nulls": 56974,
+    "sum": 4101931.0
+   },
+   "PTCOSTCARM": {
+    "type": "double",
+    "nulls": 57847,
+    "sum": 1495797.0
+   },
+   "PTCOSTPARK": {
+    "type": "double",
+    "nulls": 55891,
+    "sum": 193333.0
+   },
+   "PTCOSTPTR": {
+    "type": "double",
+    "nulls": 55892,
+    "sum": 456803.0
+   },
+   "PTBANK": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "2",
+    "last": "2"
+   },
+   "PTENTMNT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "2",
+    "last": "2"
+   },
+   "PTGROCER": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "2",
+    "last": "2"
+   },
+   "PTHEALTH": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "2",
+    "last": "2"
+   },
+   "PTRETAIL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "2",
+    "last": "2"
+   },
+   "PTSERVIC": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "2",
+    "last": "2"
+   },
+   "PTDISRAIL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTGETRAIL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTOFTRAIL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTDISSHUT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTGETSHUT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTOFTSHUT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTDISSUB": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTGETSUB": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTOFTSUB": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTDISBUS": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTGETBUS": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTOFTBUS": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBBIKELANE": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "2",
+    "last": "2"
+   },
+   "PTDISPUB": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "D",
+    "last": "4"
+   },
+   "WBNOBIKE": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "2",
+    "last": "2"
+   },
+   "PTPUBTRN": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "2",
+    "last": "2"
+   },
+   "PTWKSCHL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "NHDBLDSUD": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "NHDBLDSUA": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "NHDBLDMU": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "NHDBLDMH": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTUSBUS": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTUSSUB": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTUSSHUT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTUSRAIL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTUSOTR": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "PTUSTAXI": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "2",
+    "last": "2"
+   },
+   "PTUSCRPL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "2",
+    "last": "2"
+   },
+   "PTUSCRSH": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "2",
+    "last": "2"
+   },
+   "WBNOBKNOSW": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBNOBKBDSW": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBNOBKLANE": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBNOBKBIKE": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBNOBKTRAF": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBNOBKFAST": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBNOBKLITE": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBNOBKCRIM": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBNOBKDEST": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBNOBKHLTH": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBNOBKTIME": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBNOBKOTHR": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "DPEVACPETS": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "3",
+    "last": "3"
+   },
+   "GROCERY": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "DRUGSTORE": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBBIKEWALK": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "4",
+    "last": "4"
+   },
+   "WBGROCER": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBSERVIC": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBRETAIL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBENTMNT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBHEALTH": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBBANK": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBWKSCHL": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "WBSIDEWALK": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "2",
+    "last": "1"
+   },
+   "DPGENERT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "1",
+    "last": "2"
+   },
+   "DPEMWATER": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "1",
+    "last": "2"
+   },
+   "DPEVSEP": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "B",
+    "last": "B"
+   },
+   "DPEVKIT": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "1",
+    "last": "1"
+   },
+   "DPEVINFO": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "1",
+    "last": "1"
+   },
+   "DPEVLOC": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "1",
+    "last": "1"
+   },
+   "DPEVFIN": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "1",
+    "last": "1"
+   },
+   "DPEVVEHIC": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 84355,
+    "first": "1",
+    "last": "1"
+   },
+   "SPLTWGT1": {
+    "type": "double",
+    "nulls": 42176,
+    "sum": 132840058.31914765
+   },
+   "SPLTWGT2": {
+    "type": "double",
+    "nulls": 42179,
+    "sum": 132826234.95461684
+   }
+  }
+ },
+ "types": {
+  "rows": 3,
+  "columns": {
+   "vfloat": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 4.276981090307826e+86
+   },
+   "vdouble": {
+    "type": "double",
+    "nulls": 0,
+    "sum": -9.946246557359589e+86
+   },
+   "vlong": {
+    "type": "double",
+    "nulls": 0,
+    "sum": -9.945250560138092e+86
+   },
+   "vint": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 1.4447387167188864e-42
+   },
+   "vbyte": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 0.0
+   },
+   "vstring": {
+    "type": "string",
+    "nulls": 3,
+    "chars": 0,
+    "first": null,
+    "last": null
+   }
+  }
+ },
+ "weigth2": {
+  "rows": 4,
+  "columns": {
+   "IDnumber": {
+    "type": "string",
+    "nulls": 0,
+    "chars": 16,
+    "first": "2477",
+    "last": "2412"
+   },
+   "week1": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 723.0
+   },
+   "week16": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 632.0
+   },
+   "AverageLoss": {
+    "type": "double",
+    "nulls": 0,
+    "sum": 91.0
+   }
+  }
+ },
+ "zero_variables": {
+  "rows": 0,
+  "columns": {}
+ }
+}
